@@ -6,37 +6,35 @@ import 'package:rick_morty_01/theme/text_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
 
 class HeroesListView extends StatelessWidget {
-  List<HeroModel>? heroesList;
+  final List<HeroModel>? heroesList;
+
+  HeroesListView({@required this.heroesList});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(16, 0, 16, 0),
-      child: ListView.separated(
-        itemCount: heroesList!.length,
-        itemBuilder: (BuildContext context, int index) => InkWell(
-          child: _HeroListViewItem(heroesList![index]),
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => HeroProfileScreen(
-                    currentHero: heroesList![index],
-                    currentHeroId: index,
-                  ),
-                ));
-          },
-        ),
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        separatorBuilder: (BuildContext context, int index) => Container(
-          height: 24,
-        ),
+    return ListView.separated(
+      itemCount: heroesList!.length,
+      itemBuilder: (BuildContext context, int index) => InkWell(
+        child: _HeroListViewItem(heroesList![index]),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HeroProfileScreen(
+                  currentHero: heroesList![index],
+                  currentHeroId: index,
+                ),
+              ));
+        },
+      ),
+      padding: EdgeInsets.symmetric(horizontal: 16),
+      shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      separatorBuilder: (BuildContext context, int index) => Container(
+        height: 24,
       ),
     );
   }
-
-  HeroesListView({@required this.heroesList});
 }
 
 _HeroListViewItem(HeroModel heroListItem) {
@@ -62,7 +60,7 @@ _HeroListViewItem(HeroModel heroListItem) {
           ),
           Text(
             heroListItem.name,
-            style: themeTextStyles.textHeroName,
+            style: themeTextStyles.textAppearanceSubtitle2,
           ),
           Text(
             "${heroListItem.bio}, ${heroListItem.sex}",

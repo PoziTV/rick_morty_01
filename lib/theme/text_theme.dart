@@ -7,7 +7,7 @@ class themeTextStyles {
     fontWeight: FontWeight.w400,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 1.28,
+    height: (24 / 16),
     letterSpacing: 0.44,
     color: themeColorPalette.HintText,
   );
@@ -17,8 +17,7 @@ class themeTextStyles {
     fontWeight: FontWeight.w400,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 1.43,
-    // 1.22,
+    height: (20 / 14),
     letterSpacing: 0.25,
     color: themeColorPalette.NameWhite,
   );
@@ -28,7 +27,7 @@ class themeTextStyles {
     fontWeight: FontWeight.w500,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 1.37,
+    height: (16 / 10),
     letterSpacing: 1.5,
     color: themeColorPalette.ServiceBartText,
   );
@@ -43,12 +42,12 @@ class themeTextStyles {
     // color: themeColorPalette.AliveGreen,
   );
 
-  static const TextStyle textHeroName = TextStyle(
-    fontSize: 16,
+  static const TextStyle textAppearanceSubtitle2 = TextStyle(
+    fontSize: 14,
     fontWeight: FontWeight.w500,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 1.28,
+    height: (20 / 14),
     letterSpacing: 0.5,
     color: themeColorPalette.NameWhite,
   );
@@ -58,7 +57,7 @@ class themeTextStyles {
     fontWeight: FontWeight.w500,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 1.14,
+    height: (16 / 12),
     letterSpacing: 0.5,
     color: themeColorPalette.AdditionalText_01,
   );
@@ -88,7 +87,7 @@ class themeTextStyles {
     fontWeight: FontWeight.w400,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
-    height: 19.5/13,
+    height: (19.5 / 13),
     letterSpacing: 0.5,
     color: themeColorPalette.NameWhite,
   );
@@ -105,7 +104,6 @@ class themeTextStyles {
 
   static TextStyle textEpisodeName = TextStyle(
     fontSize: 16,
-    // fontWeight: FontWeight.w500,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
     height: (24 / 16),
@@ -115,7 +113,6 @@ class themeTextStyles {
 
   static TextStyle textBody2 = TextStyle(
     fontSize: 14,
-    // fontWeight: FontWeight.w500,
     fontFamily: ('Roboto'),
     fontStyle: FontStyle.normal,
     height: (20 / 14),

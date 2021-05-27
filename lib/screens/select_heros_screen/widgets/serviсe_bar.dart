@@ -6,7 +6,10 @@ import 'package:rick_morty_01/theme/text_theme.dart';
 
 class ServiceBar extends StatelessWidget implements PreferredSizeWidget {
   int heroesTotal;
-  void Function()? changeViewCallBack;
+  void Function(/*bool isGrid*/)? changeViewCallBack = (/*bool isGrid*/) {};
+
+  ServiceBar({this.heroesTotal = 0, this.changeViewCallBack})
+      : preferredSize = Size.fromHeight(68);
 
   @override
   final Size preferredSize;
@@ -15,7 +18,10 @@ class ServiceBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 16, right: 16, top: 20, bottom: 24),
-      padding: EdgeInsets.only(right: 14),
+      padding: EdgeInsets.only(
+        // left: 16,
+        right: 12,
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -31,7 +37,4 @@ class ServiceBar extends StatelessWidget implements PreferredSizeWidget {
       ),
     );
   }
-
-  ServiceBar({this.heroesTotal = 0, this.changeViewCallBack})
-      : preferredSize = Size.fromHeight(68);
 }

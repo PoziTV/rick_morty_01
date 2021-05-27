@@ -3,7 +3,10 @@ import 'package:rick_morty_01/data/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/legend_card.dart';
 
 class HeroLegend extends StatelessWidget {
-  HeroModel? currentHero;
+  final HeroModel? currentHero;
+
+  HeroLegend({@required this.currentHero});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,24 +15,42 @@ class HeroLegend extends StatelessWidget {
         children: [
           Row(
             children: [
-              LegendCard(title: "Пол", info: currentHero!.sex),
-              Padding(padding: EdgeInsets.only(right: 118)),
-              LegendCard(title: "Расса", info: currentHero!.bio),
+              Expanded(
+                  child: LegendCard(
+                title: "Пол",
+                info: currentHero!.sex,
+              )),
+              Expanded(
+                  child: LegendCard(
+                title: "Расса",
+                info: currentHero!.bio,
+              )),
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(top: 20, bottom: 24),
-            child: LegendCard(
-                title: "Место Рождения", info: "Земля C-137", detailAble: true),
+          const SizedBox(
+            height: 20,
           ),
           LegendCard(
-              title: "Местоположение",
-              info: "Земля (Измерение подменны)",
-              detailAble: true),
+            title: "Место Рождения",
+            info: "Земля C-137",
+            detailAble: true,
+            onTap: () {
+              print("LegendCard");
+            },
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          LegendCard(
+            title: "Местоположение",
+            info: "Земля (Измерение подменны)",
+            detailAble: true,
+            onTap: () {
+              print("LegendCard");
+            },
+          ),
         ],
       ),
     );
   }
-
-  HeroLegend({@required this.currentHero});
 }

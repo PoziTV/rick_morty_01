@@ -6,35 +6,36 @@ import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/episode_info.dart';
 
 class EpisodCard extends StatelessWidget {
-  EpisodeModel? currentEpisod;
+  final EpisodeModel? currentEpisod;
+
+  EpisodCard({this.currentEpisod, });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Container(
-          height: 74,
-          width: 74,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10.0),
-            image: DecorationImage(
-                fit: BoxFit.fitHeight,
-                image: Image.asset(currentEpisod!.episodeScreen).image),
+    return GestureDetector(
+      child: Row(
+        children: [
+          Container(
+            height: 74,
+            width: 74,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              image: DecorationImage(
+                  fit: BoxFit.fitHeight,
+                  image: Image.asset(currentEpisod!.episodeScreen).image),
+            ),
+            margin: EdgeInsets.only(right: 16),
           ),
-        ),
-        EpisodInfo(currentEpisod: currentEpisod),
-        Container(
-          width: 24,
-          child: SvgPicture.asset(
-            SvgIcons.AngleRightIcon,
+          EpisodInfo(currentEpisod: currentEpisod),
+          Container(
+            width: 24,
+            child: SvgPicture.asset(
+              SvgIcons.AngleRightIcon,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
+      onTap: (){print("episode ${currentEpisod!.episodeNum}");},
     );
   }
-
-  EpisodCard({this.currentEpisod});
 }
-
-

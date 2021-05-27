@@ -6,40 +6,22 @@ import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 
 class HeroEpisodesList extends StatelessWidget {
-  HeroModel? currentHero;
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text(
-              "Эпизоды",
-              style: themeTextStyles.textAppearanceHeadline6,
-            ),
-            Text(
-              "Все эпизоды",
-              style: themeTextStyles.textAppearanceCaption
-                  .copyWith(color: themeColorPalette.HintText),
-            ),
-          ],
-        ),
-        Container(
-          child: ListView.separated(
-            itemCount: EpisodesList.length,
-            itemBuilder: (BuildContext context, int index) =>
-                EpisodCard(currentEpisod: EpisodesList[index]),
-            separatorBuilder: (BuildContext context, int index) => Container(
-              height: 24,
-            ),
-            physics: NeverScrollableScrollPhysics(),
-            shrinkWrap: true,
-          ),
-        ),
-      ],
-    );
-  }
+  final HeroModel? currentHero;
 
   HeroEpisodesList({@required this.currentHero});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      padding: EdgeInsets.symmetric(vertical: 24), //124),
+      itemCount: EpisodesList.length,
+      itemBuilder: (BuildContext context, int index) =>
+          EpisodCard(currentEpisod: EpisodesList[index]),
+      separatorBuilder: (BuildContext context, int index) => Container(
+        height: 24,
+      ),
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
+    );
+  }
 }

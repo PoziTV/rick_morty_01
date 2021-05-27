@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:rick_morty_01/resources/images.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/screens/select_heros_screen/screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     final double viewPortHeight = MediaQuery.of(context).size.height;
     final double viewPortHeight_05 = viewPortHeight * 0.5;
     final double viewPortCoefficient = viewPortHeight / 816;
@@ -23,7 +23,8 @@ class HomeScreen extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             image: DecorationImage(
-              colorFilter: ColorFilter.mode(themeColorPalette.ScreenBackGround, BlendMode.lighten),
+              colorFilter: ColorFilter.mode(
+                  themeColorPalette.ScreenBackGround, BlendMode.lighten),
               fit: BoxFit.cover,
               image: Image.asset(
                 Images.backGroundPictureStarSky,
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Container(
-         height: viewPortHeight_05,
+          height: viewPortHeight_05,
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
@@ -74,6 +75,13 @@ class HomeScreen extends StatelessWidget {
           child: Image.asset(Images.pic_Morty_01),
           height: pickMorty_01_Height * viewPortCoefficient,
         ),
+        Container(child: GestureDetector(onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SelectHerosScreen(),
+              ));
+        })),
       ],
     );
   }
