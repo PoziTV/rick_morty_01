@@ -15,29 +15,26 @@ class HeroesBloc extends Bloc<HeroesEvent, HeroesState> {
   }
 
   Stream<HeroesState> _mapInitialHeroesEvent() async* {
-    // print("вошли в _mapInitialCharactersEvent");
-
-    // print("послали состояние CharactersState_loading");
     yield HeroesState_loading();
-    // print("начало блока try initial");
+
     try {
       /*загрузка данных из репо*/
     } catch (ex) {
       yield HeroessState_error();
     }
 
-    await Future.delayed(const Duration(seconds: 2), () {});
+    await Future.delayed(const Duration(seconds: 1), () {});
 
     yield HeroessState_error();
 
-    await Future.delayed(const Duration(seconds: 2), () {});
+    await Future.delayed(const Duration(seconds: 1), () {});
 
     yield HeroesState_loading();
 
-    await Future.delayed(const Duration(seconds: 2), () {});
+    await Future.delayed(const Duration(seconds: 1), () {});
 
-    // print("послали состояние CharactersState_data, $HeroesList");
-    // print( HeroesList);
+    //где то здесь должно выдаться состояние success
+
     yield HeroesState_data(
       heroesList: HeroesList,
       isGrid: isGrid,
@@ -46,14 +43,9 @@ class HeroesBloc extends Bloc<HeroesEvent, HeroesState> {
 
   Stream<HeroesState> _mapSelectedViewHeroesEvent(
       HeroesEvent_selectedView event) async* {
-    // print("вошли в _mapSelectedViewCharactersEvent");
-    // print("послали состояние CharactersState_loading");
     yield HeroesState_loading();
     isGrid = !event.isGrid;
 
-    // await Future.delayed(const Duration(seconds: 3), (){});
-
-    // print("послали состояние CharactersState_data");
     yield HeroesState_data(
       heroesList: HeroesList,
       isGrid: isGrid,

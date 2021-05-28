@@ -15,7 +15,7 @@ class HeroEpisodesList extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 24), //124),
       itemCount: currentHeroEpisodesList.length,
       itemBuilder: (BuildContext context, int index) =>
-          EpisodCard(currentEpisod: EpisodesList[index]),
+          EpisodCard(currentEpisod: currentHeroEpisodesList[index]),
       separatorBuilder: (BuildContext context, int index) => Container(
         height: 24,
       ),

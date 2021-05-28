@@ -52,7 +52,6 @@ class SelectHerosScreen extends StatelessWidget {
                       ..add(
                         HeroesEvent_selectedView(isGrid: isGrid),
                       );
-                    // print("нажали кнопку View Change, isGrid = $isGrid");
                   },
                 ),
               ),

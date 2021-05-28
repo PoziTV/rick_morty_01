@@ -11,7 +11,6 @@ class HeroDescription extends StatelessWidget {
       margin: EdgeInsets.only(top: 36),
       child: Text(
         currentHero!.description,
-        // "Главный протагонист мультсериала «Рик и Морти». Безумный ученый, чей алкоголизм, безрассудность и социопатия заставляют беспокоиться семью его дочери.",
         style: themeTextStyles.textDescription,
       ),
     );
