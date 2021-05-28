@@ -34,8 +34,8 @@ class SelectHerosScreen extends StatelessWidget {
               listener: (context, state) {
             if (state is HeroesState_data) {
               isGrid = state.isGrid;
-              heroesList = state.heroesList;
               heroesTotal = state.heroesList.length;
+              heroesList = state.heroesList;
             }
           }, builder: (context, state) {
             return Scaffold(

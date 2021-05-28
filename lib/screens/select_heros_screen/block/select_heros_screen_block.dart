@@ -3,12 +3,12 @@ import 'package:rick_morty_01/screens/select_heros_screen/block/select_heros_scr
 import 'package:rick_morty_01/screens/select_heros_screen/block/select_heros_screen_event.dart';
 import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
-class HeroesBloc extends Bloc<HeroersEvent, HeroesState> {
+class HeroesBloc extends Bloc<HeroesEvent, HeroesState> {
   HeroesBloc() : super(HeroesState_initial());
   bool isGrid = false;
 
   @override
-  Stream<HeroesState> mapEventToState(HeroersEvent event) async* {
+  Stream<HeroesState> mapEventToState(HeroesEvent event) async* {
     if (event is HeroesEvent_initial) yield* _mapInitialHeroesEvent();
     if (event is HeroesEvent_selectedView)
       yield* _mapSelectedViewHeroesEvent(event);
@@ -20,7 +20,9 @@ class HeroesBloc extends Bloc<HeroersEvent, HeroesState> {
     // print("послали состояние CharactersState_loading");
     yield HeroesState_loading();
     // print("начало блока try initial");
-    try {} catch (ex) {
+    try {
+      /*загрузка данных из репо*/
+    } catch (ex) {
       yield HeroessState_error();
     }
 
@@ -28,13 +30,14 @@ class HeroesBloc extends Bloc<HeroersEvent, HeroesState> {
 
     yield HeroessState_error();
 
-    await Future.delayed(const Duration(seconds: 3), () {});
+    await Future.delayed(const Duration(seconds: 2), () {});
 
     yield HeroesState_loading();
 
-    await Future.delayed(const Duration(seconds: 3), () {});
+    await Future.delayed(const Duration(seconds: 2), () {});
 
-    // print("послали состояние CharactersState_data");
+    // print("послали состояние CharactersState_data, $HeroesList");
+    // print( HeroesList);
     yield HeroesState_data(
       heroesList: HeroesList,
       isGrid: isGrid,

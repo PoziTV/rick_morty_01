@@ -1,10 +1,10 @@
-abstract class HeroersEvent {}
+abstract class HeroesEvent {}
 
 
-class HeroesEvent_initial extends HeroersEvent {}
+class HeroesEvent_initial extends HeroesEvent {}
 
 
-class HeroesEvent_selectedView extends HeroersEvent {
+class HeroesEvent_selectedView extends HeroesEvent {
   bool isGrid;
   HeroesEvent_selectedView({required this.isGrid});
 }

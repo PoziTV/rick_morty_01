@@ -14,6 +14,7 @@ class mapStateToWidget extends StatelessWidget {
     if (state is HeroesState_loading) {
       return onLoad ?? Container();
     } else if (state is HeroesState_data) {
+      // print("mapStateToWidget data, isGrid: ${state}");
       return data ?? Container();
     } else if (state is HeroessState_error) {
       return onError ??

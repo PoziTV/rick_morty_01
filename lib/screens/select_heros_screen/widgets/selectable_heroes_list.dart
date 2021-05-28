@@ -11,6 +11,7 @@ class SelectableHeroesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print("SelectableHeroesList, $isGrid, $heroesList");
     return SingleChildScrollView(
       child: isGrid
           ? HeroesListView(heroesList: heroesList)

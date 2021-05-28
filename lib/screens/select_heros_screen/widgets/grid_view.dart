@@ -12,6 +12,7 @@ class HeroesGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print("HeroesGridView, ${heroesList!.length}");
     return GridView.builder(
       itemCount: heroesList!.length,
       itemBuilder: (BuildContext context, int index) => InkWell(
@@ -21,8 +22,8 @@ class HeroesGridView extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => HeroProfileScreen(
-                  currentHero: heroesList![index],
-                  currentHeroId: index,
+                  // currentHero: heroesList![index],
+                  // currentHeroId: index,
                 ),
               ));
         },

@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rick_morty_01/data/hero_model.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_block.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_event.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_state.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
@@ -12,26 +16,35 @@ class HeroesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount: heroesList!.length,
-      itemBuilder: (BuildContext context, int index) => InkWell(
-        child: _HeroListViewItem(heroesList![index]),
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HeroProfileScreen(
-                  currentHero: heroesList![index],
-                  currentHeroId: index,
-                ),
-              ));
-        },
-      ),
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      separatorBuilder: (BuildContext context, int index) => Container(
-        height: 24,
+    return BlocProvider<HeroProfileBloc>(
+      create: (BuildContext context) => HeroProfileBloc(),
+      child: ListView.separated(
+        itemCount: heroesList!.length,
+        itemBuilder: (BuildContext context, int index) => InkWell(
+          child: _HeroListViewItem(heroesList![index]),
+          onTap: () {
+            print("HeroProfileEvent_initial, ${heroesList![index]}");
+            context.read<HeroProfileBloc>()
+              ..add(
+                HeroProfileEvent_initial(currentHero: heroesList![index]),
+              );
+            // print("нажали кнопку View Change, isGrid = $isGrid");
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HeroProfileScreen(
+                      // currentHero: heroesList![index],
+                      // currentHeroId: index,
+                      ),
+                ));
+          },
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        separatorBuilder: (BuildContext context, int index) => Container(
+          height: 24,
+        ),
       ),
     );
   }
