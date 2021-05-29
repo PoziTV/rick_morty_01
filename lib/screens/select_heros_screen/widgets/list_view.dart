@@ -16,33 +16,31 @@ class HeroesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // BlocProvider<HeroProfileBloc>(
-        // create: (BuildContext context) => HeroProfileBloc(),
-        // child:
-        ListView.separated(
-      itemCount: heroesList!.length,
-      itemBuilder: (BuildContext context, int index) => InkWell(
-        child: _HeroListViewItem(heroesList![index]),
-        onTap: () {
-          BlocProvider.of<HeroProfileBloc>(context)
-            ..add(
-              HeroProfileEvent_initial(currentHero: heroesList![index]),
-            );
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => HeroProfileScreen(),
-              ));
-        },
+    return BlocProvider<HeroProfileBloc>(
+      create: (BuildContext context) => HeroProfileBloc(),
+      child: ListView.separated(
+        itemCount: heroesList!.length,
+        itemBuilder: (BuildContext context, int index) => InkWell(
+          child: _HeroListViewItem(heroesList![index]),
+          onTap: () {
+            BlocProvider.of<HeroProfileBloc>(context)
+              ..add(
+                HeroProfileEvent_initial(currentHero: heroesList![index]),
+              );
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HeroProfileScreen(),
+                ));
+          },
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 16),
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        separatorBuilder: (BuildContext context, int index) => Container(
+          height: 24,
+        ),
       ),
-      padding: EdgeInsets.symmetric(horizontal: 16),
-      shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      separatorBuilder: (BuildContext context, int index) => Container(
-        height: 24,
-      ),
-      // ),
     );
   }
 }

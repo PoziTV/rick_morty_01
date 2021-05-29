@@ -15,9 +15,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<HeroProfileBloc>(
-      create:  (BuildContext context) => HeroProfileBloc(),
-      child: AnnotatedRegion(
+    return
+      // BlocProvider<HeroProfileBloc>(
+      // create:  (BuildContext context) => HeroProfileBloc(),
+      // child:
+      AnnotatedRegion(
         value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
             child: HomeScreen(),
           ),
         ),
-      ),
+      // ),
     );
   }
 }

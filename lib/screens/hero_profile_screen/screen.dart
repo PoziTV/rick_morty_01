@@ -29,122 +29,123 @@ class HeroProfileScreen extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: DefaultTextStyle(
           style: TextStyle(decoration: TextDecoration.none),
-          // child: BlocProvider<HeroProfileBloc>(
-          //   create: (BuildContext context) => HeroProfileBloc(),
-          child: BlocConsumer<HeroProfileBloc, HeroProfileState>(
-            listener: (context, state) {},
-            builder: (context, state) {
-              if (state is HeroProfileState_data) {
-                return Scaffold(
-                  appBar: AppBar(
-                    toolbarHeight: 100,
-                    backgroundColor: Colors.transparent,
-                    title: Container(
-                      padding: EdgeInsets.only(
-                        left: 10,
-                      ),
-                      child: FloatingActionButton(
-                        child: SvgPicture.asset(SvgIcons.ArrowBack),
-                        onPressed: () {
-                          Navigator.pop(initialContext);
-                        },
-                        backgroundColor: themeColorPalette.ScreenBackGround,
-                      ),
-                    ),
-                    elevation: 0,
-                  ),
-                  extendBodyBehindAppBar: true,
-                  backgroundColor: themeColorPalette.ScreenBackGround,
-                  body: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        Stack(
-                            alignment: AlignmentDirectional.bottomCenter,
-                            clipBehavior: Clip.none,
-                            children: [
-                              Container(
-                                height: 218,
-                                decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                    fit: BoxFit.fitWidth,
-                                    image: AssetImage(state.currentHero.ava),
-                                  ),
-                                ),
-                                child: ClipRect(
-                                  child: BackdropFilter(
-                                    filter:
-                                        ImageFilter.blur(sigmaX: 8, sigmaY: 8),
-                                    child: Container(
-                                      color: Colors.black.withOpacity(0.5),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Positioned(
-                                  top: 138,
-                                  child: CircleAvatar(
-                                    radius: 83,
-                                    backgroundColor:
-                                        themeColorPalette.ScreenBackGround,
-                                    child: CircleAvatar(
-                                      backgroundImage:
-                                          AssetImage(state.currentHero.ava),
-                                      radius: 73,
-                                    ),
-                                  ))
-                            ]),
-                        Container(
-                          margin: EdgeInsets.only(
-                            top: 90,
-                          ),
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Column(children: [
-                            HeroInfo(currentHero: state.currentHero),
-                            HeroDescription(currentHero: state.currentHero),
-                            HeroLegend(currentHero: state.currentHero),
-                            Divider(
-                              thickness: 2,
-                              height: 72,
-                              color: themeColorPalette.SearchBarBackGround,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Эпизоды",
-                                  style:
-                                      themeTextStyles.textAppearanceHeadline6,
-                                ),
-                                Text(
-                                  "Все эпизоды",
-                                  style: themeTextStyles.textAppearanceCaption
-                                      .copyWith(
-                                          color: themeColorPalette.HintText),
-                                ),
-                              ],
-                            ),
-                            HeroEpisodesList(
-                              currentHeroEpisodesList:
-                                  state.currentHeroEpisodesList,
-                            ),
-                          ]),
+          child: BlocProvider<HeroProfileBloc>(
+            create: (BuildContext context) => HeroProfileBloc(),
+            child: BlocConsumer<HeroProfileBloc, HeroProfileState>(
+              listener: (context, state) {},
+              builder: (context, state) {
+                if (state is HeroProfileState_data) {
+                  return Scaffold(
+                    appBar: AppBar(
+                      toolbarHeight: 100,
+                      backgroundColor: Colors.transparent,
+                      title: Container(
+                        padding: EdgeInsets.only(
+                          left: 10,
                         ),
-                      ],
+                        child: FloatingActionButton(
+                          child: SvgPicture.asset(SvgIcons.ArrowBack),
+                          onPressed: () {
+                            Navigator.pop(initialContext);
+                          },
+                          backgroundColor: themeColorPalette.ScreenBackGround,
+                        ),
+                      ),
+                      elevation: 0,
                     ),
-                  ),
-                );
-              } else if (state is HeroProfileState_loading) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else {
-                return Container();
-              }
-            },
+                    extendBodyBehindAppBar: true,
+                    backgroundColor: themeColorPalette.ScreenBackGround,
+                    body: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          Stack(
+                              alignment: AlignmentDirectional.bottomCenter,
+                              clipBehavior: Clip.none,
+                              children: [
+                                Container(
+                                  height: 218,
+                                  decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                      fit: BoxFit.fitWidth,
+                                      image: AssetImage(state.currentHero.ava),
+                                    ),
+                                  ),
+                                  child: ClipRect(
+                                    child: BackdropFilter(
+                                      filter: ImageFilter.blur(
+                                          sigmaX: 8, sigmaY: 8),
+                                      child: Container(
+                                        color: Colors.black.withOpacity(0.5),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Positioned(
+                                    top: 138,
+                                    child: CircleAvatar(
+                                      radius: 83,
+                                      backgroundColor:
+                                          themeColorPalette.ScreenBackGround,
+                                      child: CircleAvatar(
+                                        backgroundImage:
+                                            AssetImage(state.currentHero.ava),
+                                        radius: 73,
+                                      ),
+                                    ))
+                              ]),
+                          Container(
+                            margin: EdgeInsets.only(
+                              top: 90,
+                            ),
+                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            child: Column(children: [
+                              HeroInfo(currentHero: state.currentHero),
+                              HeroDescription(currentHero: state.currentHero),
+                              HeroLegend(currentHero: state.currentHero),
+                              Divider(
+                                thickness: 2,
+                                height: 72,
+                                color: themeColorPalette.SearchBarBackGround,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    "Эпизоды",
+                                    style:
+                                        themeTextStyles.textAppearanceHeadline6,
+                                  ),
+                                  Text(
+                                    "Все эпизоды",
+                                    style: themeTextStyles.textAppearanceCaption
+                                        .copyWith(
+                                            color: themeColorPalette.HintText),
+                                  ),
+                                ],
+                              ),
+                              HeroEpisodesList(
+                                currentHeroEpisodesList:
+                                    state.currentHeroEpisodesList,
+                              ),
+                            ]),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                } else if (state is HeroProfileState_loading) {
+                  return Center(
+                    child: CircularProgressIndicator(),
+                  );
+                } else {
+                  return Container();
+                }
+              },
+            ),
           ),
         ),
       ),
-      // ),
     );
   }
 }

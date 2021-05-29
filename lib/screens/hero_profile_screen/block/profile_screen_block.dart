@@ -7,11 +7,11 @@ import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_e
 import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_state.dart';
 
 class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
-  HeroProfileBloc() : super(HeroProfileState_initial());
-  // static final HeroProfileBloc _singleton = HeroProfileBloc._internal();
-  // factory HeroProfileBloc() {
-  //   return _singleton;
-  // }
+  HeroProfileBloc._internal() : super(HeroProfileState_initial());
+  static final HeroProfileBloc _singleton = HeroProfileBloc._internal();
+  factory HeroProfileBloc() {
+    return _singleton;
+  }
 
   @override
   Stream<HeroProfileState> mapEventToState(HeroProfileEvent event) async* {
