@@ -1,24 +1,15 @@
-import 'package:rick_morty_01/data/hero_model.dart';
+part of "select_heros_screen_block.dart";
 
-abstract class HeroesState {
-  HeroesState();
-}
+@freezed
+class SelectHeroesState with _$SelectHeroesState {
+  const factory SelectHeroesState.initial() = SelectHeroesStateInitial;
 
-class HeroesState_data extends HeroesState {
-  final List<HeroModel> heroesList;
-  final bool isGrid;
+  const factory SelectHeroesState.loading() = SelectHeroesStateLoading;
 
-  HeroesState_data({required this.heroesList, required this.isGrid});
-}
+  const factory SelectHeroesState.error() = SelectHeroesStateError;
 
-class HeroesState_initial extends HeroesState {
-  HeroesState_initial();
-}
-
-class HeroessState_error extends HeroesState {
-  HeroessState_error();
-}
-
-class HeroesState_loading extends HeroesState {
-  HeroesState_loading();
+  const factory SelectHeroesState.data({
+    required List<HeroModel> heroesList,
+    required bool isGrid,
+  }) = SelectHeroesStateData;
 }

@@ -1,10 +1,8 @@
-abstract class HeroesEvent {}
+part of "select_heros_screen_block.dart";
 
-
-class HeroesEvent_initial extends HeroesEvent {}
-
-
-class HeroesEvent_selectedView extends HeroesEvent {
-  bool isGrid;
-  HeroesEvent_selectedView({required this.isGrid});
+@freezed
+class SelectHeroesEvent with _$SelectHeroesEvent {
+  const factory SelectHeroesEvent.initial() = SelectHeroesEventInitial;
+  const factory SelectHeroesEvent.changeView({required bool isGrid}) =
+  SelectHeroesEventChangeView;
 }

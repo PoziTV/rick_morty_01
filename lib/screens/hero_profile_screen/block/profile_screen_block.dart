@@ -18,8 +18,8 @@ class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
   factory HeroProfileBloc() {
     return _singleton;
   }
+
   static final HeroProfileBloc _singleton = HeroProfileBloc._internal();
-  static HeroProfileBloc get instance => _singleton;
 
   @override
   Stream<HeroProfileState> mapEventToState(HeroProfileEvent event) async* {
@@ -44,12 +44,6 @@ class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
     } catch (ex) {
       yield HeroProfileState.error();
     }
-
-    // await Future.delayed(const Duration(seconds: 2), () {});
-
-    // yield HeroProfileState_error();
-
-    // await Future.delayed(const Duration(seconds: 1), () {});
 
     yield HeroProfileState.loading();
 
