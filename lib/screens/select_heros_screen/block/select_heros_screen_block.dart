@@ -17,6 +17,8 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
   static final SelectHeroesBloc _singleton = SelectHeroesBloc._internal();
 
   bool isGrid = false;
+  List<HeroModel> _heroesList = [];
+  int heroesTotal = 0;
 
   @override
   Stream<SelectHeroesState> mapEventToState(SelectHeroesEvent event) async* {
@@ -31,6 +33,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     yield SelectHeroesState.loading();
 
     try {
+      _heroesList = heroesList;
       /*загрузка данных из репо*/
     } catch (ex) {
       yield SelectHeroesState.error();
@@ -49,7 +52,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     //где то здесь должно выдаться состояние success
 
     yield SelectHeroesState.data(
-      heroesList: heroesList,
+      heroesList: _heroesList,
       isGrid: isGrid,
     );
   }
@@ -60,7 +63,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     isGrid = !event.isGrid;
 
     yield SelectHeroesState.data(
-      heroesList: heroesList,
+      heroesList: _heroesList,
       isGrid: isGrid,
     );
   }

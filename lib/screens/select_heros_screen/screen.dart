@@ -11,25 +11,26 @@ import 'package:rick_morty_01/screens/select_heros_screen/block/select_heros_scr
 import 'package:rick_morty_01/theme/color_theme.dart';
 
 class SelectHerosScreen extends StatelessWidget {
-  bool isGrid = false;
-  List<HeroModel> heroesList = [];
-  int heroesTotal = 0;
+  // bool isGrid = false;
+  // List<HeroModel> heroesList = [];
+  // int heroesTotal = 0;
 
   @override
   Widget build(BuildContext context) {
+    SelectHeroesBloc selectHeroesbloc = SelectHeroesBloc();
     return Container(
       decoration: BoxDecoration(
         color: themeColorPalette.ScreenBackGround,
       ),
       child: SafeArea(
         child: BlocConsumer<SelectHeroesBloc, SelectHeroesState>(
-          bloc: SelectHeroesBloc()..add(SelectHeroesEventInitial()),
+          bloc: selectHeroesbloc..add(SelectHeroesEventInitial()),
           listener: (context, state) {
-            if (state is SelectHeroesStateData) {
-              isGrid = state.isGrid;
-              heroesTotal = state.heroesList.length;
-              heroesList = state.heroesList;
-            }
+            // if (state is SelectHeroesStateData) {
+              // isGrid = state.isGrid;
+              // heroesTotal = state.heroesList.length;
+              // heroesList = state.heroesList;
+            // }
           },
           builder: (context, state) {
             return Scaffold(
@@ -40,11 +41,12 @@ class SelectHerosScreen extends StatelessWidget {
                 backgroundColor: themeColorPalette.ScreenBackGround,
                 title: SearchBar(),
                 bottom: ServiceBar(
-                  heroesTotal: heroesTotal,
+                  heroesTotal: selectHeroesbloc.heroesTotal,
                   changeViewCallBack: () {
-                    SelectHeroesBloc()
+                    selectHeroesbloc
                       ..add(
-                        SelectHeroesEvent.changeView(isGrid: isGrid),
+                        SelectHeroesEvent.changeView(
+                            isGrid: selectHeroesbloc.isGrid /*isGrid*/),
                       );
                   },
                 ),
