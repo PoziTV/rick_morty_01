@@ -1,6 +1,6 @@
 import 'package:rick_morty_01/data/episode_model.dart';
 
-List<EpisodeModel> EpisodesList = [
+List<EpisodeModel> episodesList = [
   EpisodeModel(
     episodeId: 1,
     episodeNum: 1,

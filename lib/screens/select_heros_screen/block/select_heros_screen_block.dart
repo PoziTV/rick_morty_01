@@ -36,7 +36,7 @@ class HeroesBloc extends Bloc<HeroesEvent, HeroesState> {
     //где то здесь должно выдаться состояние success
 
     yield HeroesState_data(
-      heroesList: HeroesList,
+      heroesList: heroesList,
       isGrid: isGrid,
     );
   }
@@ -47,7 +47,7 @@ class HeroesBloc extends Bloc<HeroesEvent, HeroesState> {
     isGrid = !event.isGrid;
 
     yield HeroesState_data(
-      heroesList: HeroesList,
+      heroesList: heroesList,
       isGrid: isGrid,
     );
   }

@@ -35,10 +35,10 @@ class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
     yield HeroProfileState.loading();
     try {
       // получаем список номеров серий текущего героя
-      EpisodesNumList = HeroesEpisodes[event.currentHero.heroId];
+      EpisodesNumList = heroesEpisodes[event.currentHero.heroId];
       currentHeroEpisodesList = List.generate(EpisodesNumList!.length, (index) {
         int epIdx = EpisodesNumList![index] - 1;
-        return EpisodesList[epIdx];
+        return episodesList[epIdx];
       }); // получаем список серий текущего героя
 
     } catch (ex) {

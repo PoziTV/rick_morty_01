@@ -1,7 +1,7 @@
 import 'package:rick_morty_01/data/hero_model.dart';
 import 'package:rick_morty_01/resources/variables/heroes_avatars.dart';
 
-List<HeroModel> HeroesList = [
+List<HeroModel> heroesList = [
   HeroModel(
     name: "Директор Агентства",
     aliveStatus: "ЖИВОЙ",

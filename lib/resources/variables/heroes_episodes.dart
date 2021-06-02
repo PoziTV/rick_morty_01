@@ -1,4 +1,4 @@
-Map<int, List<int>> HeroesEpisodes = {
+Map<int, List<int>> heroesEpisodes = {
   1: [1, 2, 3, 4, 5, 6],
   2: [2, 3, 4, 5, 6],
   3: [1, 3, 4, 5, 6],
