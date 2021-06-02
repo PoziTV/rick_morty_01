@@ -1,11 +1,12 @@
-import 'package:rick_morty_01/data/hero_model.dart';
+part of "profile_screen_block.dart";
 
-abstract class HeroProfileEvent {}
+@freezed
+class HeroProfileEvent with _$HeroProfileEvent {
+  // const HeroProfileEvent();
 
-class HeroProfileEvent_initial extends HeroProfileEvent {
-  final HeroModel currentHero;
+  const factory HeroProfileEvent.initial({
+    required HeroModel currentHero,
+  }) = _HeroProfileEventInitial;
 
-  HeroProfileEvent_initial({required this.currentHero});
+  // const factory  HeroProfileEvent.error() = _HeroProfileEventError;
 }
-
-class HeroProfileEvent_error extends HeroProfileEvent {}

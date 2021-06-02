@@ -3,12 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:rick_morty_01/data/episode_model.dart';
 import 'dart:ui';
-import 'package:rick_morty_01/data/hero_model.dart';
+
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_block.dart';
-import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_state.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_info.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_description.dart';
@@ -29,19 +27,16 @@ class HeroProfileScreen extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: DefaultTextStyle(
           style: TextStyle(decoration: TextDecoration.none),
-          // child: BlocProvider<HeroProfileBloc>(
-          //   key: key,
-          //   create: (BuildContext context) {
-          //     var bloc = HeroProfileBloc();
-          //     var www = bloc.myKey2;
-          //     return bloc;
-          //   },
           child: BlocConsumer<HeroProfileBloc, HeroProfileState>(
             bloc: HeroProfileBloc(),
             listener: (context, state) {},
             builder: (context, state) {
-              if (state is HeroProfileState_data) {
-                return Scaffold(
+              return state.maybeMap(
+                orElse: () => Text("Error"),
+                loading2: (_) => Center(
+                  child: CircularProgressIndicator(),
+                ),
+                data2: (state) => Scaffold(
                   appBar: AppBar(
                     toolbarHeight: 100,
                     backgroundColor: Colors.transparent,
@@ -138,17 +133,10 @@ class HeroProfileScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                );
-              } else if (state is HeroProfileState_loading) {
-                return Center(
-                  child: CircularProgressIndicator(),
-                );
-              } else {
-                return Container();
-              }
+                ),
+              );
             },
           ),
-          // ),
         ),
       ),
     );

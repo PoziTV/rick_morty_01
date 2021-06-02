@@ -72,7 +72,7 @@ packages:
     source: hosted
     version: "2.0.3"
   build_runner:
-    dependency: "direct main"
+    dependency: "direct dev"
     description:
       name: build_runner
       url: "https://pub.dartlang.org"
@@ -235,6 +235,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  freezed:
+    dependency: "direct dev"
+    description:
+      name: freezed
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.14.2"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -478,6 +485,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.99"
+  source_gen:
+    dependency: transitive
+    description:
+      name: source_gen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
   source_span:
     dependency: transitive
     description:
