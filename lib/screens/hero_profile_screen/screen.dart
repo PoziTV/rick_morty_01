@@ -29,13 +29,6 @@ class HeroProfileScreen extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: DefaultTextStyle(
           style: TextStyle(decoration: TextDecoration.none),
-          // child: BlocProvider<HeroProfileBloc>(
-          //   key: key,
-          //   create: (BuildContext context) {
-          //     var bloc = HeroProfileBloc();
-          //     var www = bloc.myKey2;
-          //     return bloc;
-          //   },
           child: BlocConsumer<HeroProfileBloc, HeroProfileState>(
             bloc: HeroProfileBloc(),
             listener: (context, state) {},
@@ -148,7 +141,6 @@ class HeroProfileScreen extends StatelessWidget {
               }
             },
           ),
-          // ),
         ),
       ),
     );

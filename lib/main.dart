@@ -16,9 +16,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      // BlocProvider<HeroProfileBloc>(
-      // create:  (BuildContext context) => HeroProfileBloc(),
-      // child:
       AnnotatedRegion(
         value: SystemUiOverlayStyle(statusBarColor: Colors.transparent),
         child: MaterialApp(

@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:rick_morty_01/data/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_block.dart';
@@ -19,20 +18,10 @@ class HeroesListView extends StatelessWidget {
     return ListView.separated(
       itemCount: heroesList!.length,
       itemBuilder: (BuildContext context, int index) => InkWell(
-        // child: BlocProvider<HeroProfileBloc>(
-        //     key: key,
-        //     create: (BuildContext context) {
-        //       var bloc = HeroProfileBloc();
-        //       var www = bloc.myKey2;
-        //       return bloc;
-        //     },
         child: _HeroListViewItem(heroesList![index]),
-        // ),
         onTap: () {
           var bloc_1 = HeroProfileBloc();
-          bloc_1.myKey2 = 12;
-          bloc_1
-            ..add(
+          bloc_1.add(
               HeroProfileEvent_initial(currentHero: heroesList![index]),
             );
           Navigator.push(
@@ -48,7 +37,6 @@ class HeroesListView extends StatelessWidget {
       separatorBuilder: (BuildContext context, int index) => Container(
         height: 24,
       ),
-      // ),
     );
   }
 }
