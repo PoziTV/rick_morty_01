@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_morty_01/data/hero_model.dart';
-import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_block.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
@@ -34,7 +34,7 @@ class HeroesGridView extends StatelessWidget {
         crossAxisCount: 2,
         childAspectRatio: 0.85,
       ),
-      physics: NeverScrollableScrollPhysics(),
+      // physics: NeverScrollableScrollPhysics(),
       shrinkWrap: true,
     );
   }

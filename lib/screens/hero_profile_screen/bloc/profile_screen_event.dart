@@ -1,4 +1,4 @@
-part of "profile_screen_block.dart";
+part of "profile_screen_bloc.dart";
 
 @freezed
 class HeroProfileEvent with _$HeroProfileEvent {

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:rick_morty_01/resources/images.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
-import 'package:rick_morty_01/screens/select_heros_screen/screen.dart';
+import 'package:rick_morty_01/screens/heros_list_screen/screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override

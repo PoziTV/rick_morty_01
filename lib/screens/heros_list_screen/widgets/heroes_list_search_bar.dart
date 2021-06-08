@@ -7,8 +7,10 @@ import 'package:rick_morty_01/theme/text_theme.dart';
 
 TextEditingController _textController = TextEditingController();
 
-class SearchBar extends StatelessWidget {
+class HeroesListSearchBar extends StatelessWidget {
+  final String title;
 
+  HeroesListSearchBar({this.title = ''});
 
   @override
   Widget build(BuildContext context) {

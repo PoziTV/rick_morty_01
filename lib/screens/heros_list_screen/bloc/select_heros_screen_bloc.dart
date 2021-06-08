@@ -5,7 +5,7 @@ import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
 part "select_heros_screen_event.dart";
 part 'select_heros_screen_state.dart';
-part "select_heros_screen_block.freezed.dart";
+part "select_heros_screen_bloc.freezed.dart";
 
 class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
   SelectHeroesBloc._internal() : super(SelectHeroesState.initial());
@@ -17,7 +17,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
   static final SelectHeroesBloc _singleton = SelectHeroesBloc._internal();
 
   bool isGrid = false;
-  List<HeroModel> _heroesList = [];
+  List<HeroModel> blocHeroesList = [];
   int heroesTotal = 0;
 
   @override
@@ -33,7 +33,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     yield SelectHeroesState.loading();
 
     try {
-      _heroesList = heroesList;
+      blocHeroesList = heroesList;
       /*загрузка данных из репо*/
     } catch (ex) {
       yield SelectHeroesState.error();
@@ -52,7 +52,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     //где то здесь должно выдаться состояние success
 
     yield SelectHeroesState.data(
-      heroesList: _heroesList,
+      heroesList: blocHeroesList,
       isGrid: isGrid,
     );
   }
@@ -63,7 +63,7 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     isGrid = !event.isGrid;
 
     yield SelectHeroesState.data(
-      heroesList: _heroesList,
+      heroesList: blocHeroesList,
       isGrid: isGrid,
     );
   }

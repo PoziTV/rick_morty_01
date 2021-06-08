@@ -1,4 +1,4 @@
-part of "select_heros_screen_block.dart";
+part of "select_heros_screen_bloc.dart";
 
 @freezed
 class SelectHeroesState with _$SelectHeroesState {

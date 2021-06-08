@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
-import 'package:rick_morty_01/screens/hero_profile_screen/block/profile_screen_block.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_description.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_episodes_list.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_info.dart';

@@ -59,6 +59,7 @@ flutter:
     - assets/images/heroes/
     - assets/descriptions/heroes/
     - assets/images/episodes/
+    - assets/images/locations/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

@@ -7,8 +7,8 @@ import 'dart:ui';
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/heros_list_screen/widgets/state_data_to_widget.dart';
 
-class HeroProfileScreen extends StatelessWidget {
-  HeroProfileScreen();
+class LocationProfileScreen extends StatelessWidget {
+  LocationProfileScreen();
 
   @override
   Widget build(BuildContext context) {

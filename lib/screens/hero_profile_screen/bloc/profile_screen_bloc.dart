@@ -10,7 +10,7 @@ import 'package:rick_morty_01/resources/variables/heroes_episodes.dart';
 
 part "profile_screen_event.dart";
 part "profile_screen_state.dart";
-part 'profile_screen_block.freezed.dart';
+part 'profile_screen_bloc.freezed.dart';
 
 class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
   HeroProfileBloc._internal() : super(HeroProfileState.initial());

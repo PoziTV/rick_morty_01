@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_01/screens/select_heros_screen/block/select_heros_screen_block.dart';
+import 'package:rick_morty_01/screens/heros_list_screen/bloc/select_heros_screen_bloc.dart';
 
 class mapStateToWidget extends StatelessWidget {
   final Widget? onLoad;
