@@ -5,53 +5,60 @@ import "package:flutter/foundation.dart";
 
 import 'package:rick_morty_01/data/episode_model.dart';
 import 'package:rick_morty_01/data/hero_model.dart';
+import 'package:rick_morty_01/data/location_model.dart';
 import 'package:rick_morty_01/resources/variables/episodes_list.dart';
 import 'package:rick_morty_01/resources/variables/heroes_episodes.dart';
+import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
 part "profile_screen_event.dart";
 part "profile_screen_state.dart";
 part 'profile_screen_bloc.freezed.dart';
 
-class HeroProfileBloc extends Bloc<HeroProfileEvent, HeroProfileState> {
-  HeroProfileBloc._internal() : super(HeroProfileState.initial());
+class LocationProfileBloc
+    extends Bloc<LocationProfileEvent, LocationProfileState> {
+  LocationProfileBloc._internal() : super(LocationProfileState.initial());
 
-  factory HeroProfileBloc() {
+  factory LocationProfileBloc() {
     return _singleton;
   }
 
-  static final HeroProfileBloc _singleton = HeroProfileBloc._internal();
+  static final LocationProfileBloc _singleton = LocationProfileBloc._internal();
 
   @override
-  Stream<HeroProfileState> mapEventToState(HeroProfileEvent event) async* {
+  Stream<LocationProfileState> mapEventToState(
+      LocationProfileEvent event) async* {
     yield* event.map(
-      initial: _mapInitialHeroProfileEvent,
+      initial: _mapInitialLocationProfileEvent,
     );
   }
 
-  Stream<HeroProfileState> _mapInitialHeroProfileEvent(
-      _HeroProfileEventInitial event) async* {
-    List<EpisodeModel> currentHeroEpisodesList = [];
-    List<int>? EpisodesNumList = [];
-    yield HeroProfileState.loading();
+  Stream<LocationProfileState> _mapInitialLocationProfileEvent(
+      LocationProfileEventInitial event) async* {
+    // List<EpisodeModel> currentHeroEpisodesList = [];
+    // List<int>? EpisodesNumList = [];
+
+    LocationModel currentLocation;
+
+    yield LocationProfileState.loading();
     try {
       // получаем список номеров серий текущего героя
-      EpisodesNumList = heroesEpisodes[event.currentHero.heroId];
-      currentHeroEpisodesList = List.generate(EpisodesNumList!.length, (index) {
-        int epIdx = EpisodesNumList![index] - 1;
-        return episodesList[epIdx];
-      }); // получаем список серий текущего героя
+      // EpisodesNumList = heroesEpisodes[event.currentHero.heroId];
+      // currentHeroEpisodesList = List.generate(EpisodesNumList!.length, (index) {
+      //   int epIdx = EpisodesNumList![index] - 1;
+      //   return episodesList[epIdx];
+      // }); // получаем список серий текущего героя
 
     } catch (ex) {
-      yield HeroProfileState.error();
+      yield LocationProfileState.error();
     }
 
-    yield HeroProfileState.loading();
+    yield LocationProfileState.loading();
 
-    await Future.delayed(const Duration(seconds: 2), () {});
+    await Future.delayed(const Duration(seconds: 1), () {});
 
-    yield HeroProfileState.data(
-      currentHero: event.currentHero,
-      currentHeroEpisodesList: currentHeroEpisodesList,
+    yield LocationProfileState.data(
+      currentLocation: event.currentLocation,
+      currentLocationHeroesList: heroesList,
     );
   }
 }

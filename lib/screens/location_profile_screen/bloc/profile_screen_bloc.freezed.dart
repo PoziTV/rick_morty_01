@@ -13,174 +13,177 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$HeroProfileEventTearOff {
-  const _$HeroProfileEventTearOff();
+class _$LocationProfileEventTearOff {
+  const _$LocationProfileEventTearOff();
 
-  _HeroProfileEventInitial initial({required HeroModel currentHero}) {
-    return _HeroProfileEventInitial(
-      currentHero: currentHero,
+  LocationProfileEventInitial initial(
+      {required LocationModel currentLocation}) {
+    return LocationProfileEventInitial(
+      currentLocation: currentLocation,
     );
   }
 }
 
 /// @nodoc
-const $HeroProfileEvent = _$HeroProfileEventTearOff();
+const $LocationProfileEvent = _$LocationProfileEventTearOff();
 
 /// @nodoc
-mixin _$HeroProfileEvent {
-  HeroModel get currentHero => throw _privateConstructorUsedError;
+mixin _$LocationProfileEvent {
+  LocationModel get currentLocation => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HeroModel currentHero) initial,
+    required TResult Function(LocationModel currentLocation) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HeroModel currentHero)? initial,
+    TResult Function(LocationModel currentLocation)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HeroProfileEventInitial value) initial,
+    required TResult Function(LocationProfileEventInitial value) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HeroProfileEventInitial value)? initial,
+    TResult Function(LocationProfileEventInitial value)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HeroProfileEventCopyWith<HeroProfileEvent> get copyWith =>
+  $LocationProfileEventCopyWith<LocationProfileEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HeroProfileEventCopyWith<$Res> {
-  factory $HeroProfileEventCopyWith(
-          HeroProfileEvent value, $Res Function(HeroProfileEvent) then) =
-      _$HeroProfileEventCopyWithImpl<$Res>;
-  $Res call({HeroModel currentHero});
+abstract class $LocationProfileEventCopyWith<$Res> {
+  factory $LocationProfileEventCopyWith(LocationProfileEvent value,
+          $Res Function(LocationProfileEvent) then) =
+      _$LocationProfileEventCopyWithImpl<$Res>;
+  $Res call({LocationModel currentLocation});
 }
 
 /// @nodoc
-class _$HeroProfileEventCopyWithImpl<$Res>
-    implements $HeroProfileEventCopyWith<$Res> {
-  _$HeroProfileEventCopyWithImpl(this._value, this._then);
+class _$LocationProfileEventCopyWithImpl<$Res>
+    implements $LocationProfileEventCopyWith<$Res> {
+  _$LocationProfileEventCopyWithImpl(this._value, this._then);
 
-  final HeroProfileEvent _value;
+  final LocationProfileEvent _value;
   // ignore: unused_field
-  final $Res Function(HeroProfileEvent) _then;
+  final $Res Function(LocationProfileEvent) _then;
 
   @override
   $Res call({
-    Object? currentHero = freezed,
+    Object? currentLocation = freezed,
   }) {
     return _then(_value.copyWith(
-      currentHero: currentHero == freezed
-          ? _value.currentHero
-          : currentHero // ignore: cast_nullable_to_non_nullable
-              as HeroModel,
+      currentLocation: currentLocation == freezed
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LocationModel,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$HeroProfileEventInitialCopyWith<$Res>
-    implements $HeroProfileEventCopyWith<$Res> {
-  factory _$HeroProfileEventInitialCopyWith(_HeroProfileEventInitial value,
-          $Res Function(_HeroProfileEventInitial) then) =
-      __$HeroProfileEventInitialCopyWithImpl<$Res>;
+abstract class $LocationProfileEventInitialCopyWith<$Res>
+    implements $LocationProfileEventCopyWith<$Res> {
+  factory $LocationProfileEventInitialCopyWith(
+          LocationProfileEventInitial value,
+          $Res Function(LocationProfileEventInitial) then) =
+      _$LocationProfileEventInitialCopyWithImpl<$Res>;
   @override
-  $Res call({HeroModel currentHero});
+  $Res call({LocationModel currentLocation});
 }
 
 /// @nodoc
-class __$HeroProfileEventInitialCopyWithImpl<$Res>
-    extends _$HeroProfileEventCopyWithImpl<$Res>
-    implements _$HeroProfileEventInitialCopyWith<$Res> {
-  __$HeroProfileEventInitialCopyWithImpl(_HeroProfileEventInitial _value,
-      $Res Function(_HeroProfileEventInitial) _then)
-      : super(_value, (v) => _then(v as _HeroProfileEventInitial));
+class _$LocationProfileEventInitialCopyWithImpl<$Res>
+    extends _$LocationProfileEventCopyWithImpl<$Res>
+    implements $LocationProfileEventInitialCopyWith<$Res> {
+  _$LocationProfileEventInitialCopyWithImpl(LocationProfileEventInitial _value,
+      $Res Function(LocationProfileEventInitial) _then)
+      : super(_value, (v) => _then(v as LocationProfileEventInitial));
 
   @override
-  _HeroProfileEventInitial get _value =>
-      super._value as _HeroProfileEventInitial;
+  LocationProfileEventInitial get _value =>
+      super._value as LocationProfileEventInitial;
 
   @override
   $Res call({
-    Object? currentHero = freezed,
+    Object? currentLocation = freezed,
   }) {
-    return _then(_HeroProfileEventInitial(
-      currentHero: currentHero == freezed
-          ? _value.currentHero
-          : currentHero // ignore: cast_nullable_to_non_nullable
-              as HeroModel,
+    return _then(LocationProfileEventInitial(
+      currentLocation: currentLocation == freezed
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LocationModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_HeroProfileEventInitial
+class _$LocationProfileEventInitial
     with DiagnosticableTreeMixin
-    implements _HeroProfileEventInitial {
-  const _$_HeroProfileEventInitial({required this.currentHero});
+    implements LocationProfileEventInitial {
+  const _$LocationProfileEventInitial({required this.currentLocation});
 
   @override
-  final HeroModel currentHero;
+  final LocationModel currentLocation;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileEvent.initial(currentHero: $currentHero)';
+    return 'LocationProfileEvent.initial(currentLocation: $currentLocation)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HeroProfileEvent.initial'))
-      ..add(DiagnosticsProperty('currentHero', currentHero));
+      ..add(DiagnosticsProperty('type', 'LocationProfileEvent.initial'))
+      ..add(DiagnosticsProperty('currentLocation', currentLocation));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HeroProfileEventInitial &&
-            (identical(other.currentHero, currentHero) ||
+        (other is LocationProfileEventInitial &&
+            (identical(other.currentLocation, currentLocation) ||
                 const DeepCollectionEquality()
-                    .equals(other.currentHero, currentHero)));
+                    .equals(other.currentLocation, currentLocation)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentHero);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(currentLocation);
 
   @JsonKey(ignore: true)
   @override
-  _$HeroProfileEventInitialCopyWith<_HeroProfileEventInitial> get copyWith =>
-      __$HeroProfileEventInitialCopyWithImpl<_HeroProfileEventInitial>(
-          this, _$identity);
+  $LocationProfileEventInitialCopyWith<LocationProfileEventInitial>
+      get copyWith => _$LocationProfileEventInitialCopyWithImpl<
+          LocationProfileEventInitial>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HeroModel currentHero) initial,
+    required TResult Function(LocationModel currentLocation) initial,
   }) {
-    return initial(currentHero);
+    return initial(currentLocation);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HeroModel currentHero)? initial,
+    TResult Function(LocationModel currentLocation)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(currentHero);
+      return initial(currentLocation);
     }
     return orElse();
   }
@@ -188,7 +191,7 @@ class _$_HeroProfileEventInitial
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_HeroProfileEventInitial value) initial,
+    required TResult Function(LocationProfileEventInitial value) initial,
   }) {
     return initial(this);
   }
@@ -196,7 +199,7 @@ class _$_HeroProfileEventInitial
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_HeroProfileEventInitial value)? initial,
+    TResult Function(LocationProfileEventInitial value)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -206,56 +209,56 @@ class _$_HeroProfileEventInitial
   }
 }
 
-abstract class _HeroProfileEventInitial implements HeroProfileEvent {
-  const factory _HeroProfileEventInitial({required HeroModel currentHero}) =
-      _$_HeroProfileEventInitial;
+abstract class LocationProfileEventInitial implements LocationProfileEvent {
+  const factory LocationProfileEventInitial(
+      {required LocationModel currentLocation}) = _$LocationProfileEventInitial;
 
   @override
-  HeroModel get currentHero => throw _privateConstructorUsedError;
+  LocationModel get currentLocation => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$HeroProfileEventInitialCopyWith<_HeroProfileEventInitial> get copyWith =>
-      throw _privateConstructorUsedError;
+  $LocationProfileEventInitialCopyWith<LocationProfileEventInitial>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-class _$HeroProfileStateTearOff {
-  const _$HeroProfileStateTearOff();
+class _$LocationProfileStateTearOff {
+  const _$LocationProfileStateTearOff();
 
-  HeroProfileStateInitial initial() {
-    return const HeroProfileStateInitial();
+  LocationProfileStateInitial initial() {
+    return const LocationProfileStateInitial();
   }
 
-  HeroProfileStateLoading loading() {
-    return const HeroProfileStateLoading();
+  LocationProfileStateLoading loading() {
+    return const LocationProfileStateLoading();
   }
 
-  HeroProfileStateError error() {
-    return const HeroProfileStateError();
+  LocationProfileStateError error() {
+    return const LocationProfileStateError();
   }
 
-  HeroProfileStateData data(
-      {required HeroModel currentHero,
-      required List<EpisodeModel> currentHeroEpisodesList}) {
-    return HeroProfileStateData(
-      currentHero: currentHero,
-      currentHeroEpisodesList: currentHeroEpisodesList,
+  LocationProfileStateData data(
+      {required LocationModel currentLocation,
+      required List<HeroModel> currentLocationHeroesList}) {
+    return LocationProfileStateData(
+      currentLocation: currentLocation,
+      currentLocationHeroesList: currentLocationHeroesList,
     );
   }
 }
 
 /// @nodoc
-const $HeroProfileState = _$HeroProfileStateTearOff();
+const $LocationProfileState = _$LocationProfileStateTearOff();
 
 /// @nodoc
-mixin _$HeroProfileState {
+mixin _$LocationProfileState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)
+    required TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)
         data,
   }) =>
       throw _privateConstructorUsedError;
@@ -264,88 +267,91 @@ mixin _$HeroProfileState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)?
+    TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)?
         data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HeroProfileStateInitial value) initial,
-    required TResult Function(HeroProfileStateLoading value) loading,
-    required TResult Function(HeroProfileStateError value) error,
-    required TResult Function(HeroProfileStateData value) data,
+    required TResult Function(LocationProfileStateInitial value) initial,
+    required TResult Function(LocationProfileStateLoading value) loading,
+    required TResult Function(LocationProfileStateError value) error,
+    required TResult Function(LocationProfileStateData value) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HeroProfileStateInitial value)? initial,
-    TResult Function(HeroProfileStateLoading value)? loading,
-    TResult Function(HeroProfileStateError value)? error,
-    TResult Function(HeroProfileStateData value)? data,
+    TResult Function(LocationProfileStateInitial value)? initial,
+    TResult Function(LocationProfileStateLoading value)? loading,
+    TResult Function(LocationProfileStateError value)? error,
+    TResult Function(LocationProfileStateData value)? data,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $HeroProfileStateCopyWith<$Res> {
-  factory $HeroProfileStateCopyWith(
-          HeroProfileState value, $Res Function(HeroProfileState) then) =
-      _$HeroProfileStateCopyWithImpl<$Res>;
+abstract class $LocationProfileStateCopyWith<$Res> {
+  factory $LocationProfileStateCopyWith(LocationProfileState value,
+          $Res Function(LocationProfileState) then) =
+      _$LocationProfileStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HeroProfileStateCopyWithImpl<$Res>
-    implements $HeroProfileStateCopyWith<$Res> {
-  _$HeroProfileStateCopyWithImpl(this._value, this._then);
+class _$LocationProfileStateCopyWithImpl<$Res>
+    implements $LocationProfileStateCopyWith<$Res> {
+  _$LocationProfileStateCopyWithImpl(this._value, this._then);
 
-  final HeroProfileState _value;
+  final LocationProfileState _value;
   // ignore: unused_field
-  final $Res Function(HeroProfileState) _then;
+  final $Res Function(LocationProfileState) _then;
 }
 
 /// @nodoc
-abstract class $HeroProfileStateInitialCopyWith<$Res> {
-  factory $HeroProfileStateInitialCopyWith(HeroProfileStateInitial value,
-          $Res Function(HeroProfileStateInitial) then) =
-      _$HeroProfileStateInitialCopyWithImpl<$Res>;
+abstract class $LocationProfileStateInitialCopyWith<$Res> {
+  factory $LocationProfileStateInitialCopyWith(
+          LocationProfileStateInitial value,
+          $Res Function(LocationProfileStateInitial) then) =
+      _$LocationProfileStateInitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HeroProfileStateInitialCopyWithImpl<$Res>
-    extends _$HeroProfileStateCopyWithImpl<$Res>
-    implements $HeroProfileStateInitialCopyWith<$Res> {
-  _$HeroProfileStateInitialCopyWithImpl(HeroProfileStateInitial _value,
-      $Res Function(HeroProfileStateInitial) _then)
-      : super(_value, (v) => _then(v as HeroProfileStateInitial));
+class _$LocationProfileStateInitialCopyWithImpl<$Res>
+    extends _$LocationProfileStateCopyWithImpl<$Res>
+    implements $LocationProfileStateInitialCopyWith<$Res> {
+  _$LocationProfileStateInitialCopyWithImpl(LocationProfileStateInitial _value,
+      $Res Function(LocationProfileStateInitial) _then)
+      : super(_value, (v) => _then(v as LocationProfileStateInitial));
 
   @override
-  HeroProfileStateInitial get _value => super._value as HeroProfileStateInitial;
+  LocationProfileStateInitial get _value =>
+      super._value as LocationProfileStateInitial;
 }
 
 /// @nodoc
 
-class _$HeroProfileStateInitial
+class _$LocationProfileStateInitial
     with DiagnosticableTreeMixin
-    implements HeroProfileStateInitial {
-  const _$HeroProfileStateInitial();
+    implements LocationProfileStateInitial {
+  const _$LocationProfileStateInitial();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileState.initial()';
+    return 'LocationProfileState.initial()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'HeroProfileState.initial'));
+    properties
+      ..add(DiagnosticsProperty('type', 'LocationProfileState.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HeroProfileStateInitial);
+    return identical(this, other) || (other is LocationProfileStateInitial);
   }
 
   @override
@@ -357,8 +363,8 @@ class _$HeroProfileStateInitial
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)
+    required TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)
         data,
   }) {
     return initial();
@@ -370,8 +376,8 @@ class _$HeroProfileStateInitial
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)?
+    TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)?
         data,
     required TResult orElse(),
   }) {
@@ -384,10 +390,10 @@ class _$HeroProfileStateInitial
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HeroProfileStateInitial value) initial,
-    required TResult Function(HeroProfileStateLoading value) loading,
-    required TResult Function(HeroProfileStateError value) error,
-    required TResult Function(HeroProfileStateData value) data,
+    required TResult Function(LocationProfileStateInitial value) initial,
+    required TResult Function(LocationProfileStateLoading value) loading,
+    required TResult Function(LocationProfileStateError value) error,
+    required TResult Function(LocationProfileStateData value) data,
   }) {
     return initial(this);
   }
@@ -395,10 +401,10 @@ class _$HeroProfileStateInitial
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HeroProfileStateInitial value)? initial,
-    TResult Function(HeroProfileStateLoading value)? loading,
-    TResult Function(HeroProfileStateError value)? error,
-    TResult Function(HeroProfileStateData value)? data,
+    TResult Function(LocationProfileStateInitial value)? initial,
+    TResult Function(LocationProfileStateLoading value)? loading,
+    TResult Function(LocationProfileStateError value)? error,
+    TResult Function(LocationProfileStateData value)? data,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -408,50 +414,53 @@ class _$HeroProfileStateInitial
   }
 }
 
-abstract class HeroProfileStateInitial implements HeroProfileState {
-  const factory HeroProfileStateInitial() = _$HeroProfileStateInitial;
+abstract class LocationProfileStateInitial implements LocationProfileState {
+  const factory LocationProfileStateInitial() = _$LocationProfileStateInitial;
 }
 
 /// @nodoc
-abstract class $HeroProfileStateLoadingCopyWith<$Res> {
-  factory $HeroProfileStateLoadingCopyWith(HeroProfileStateLoading value,
-          $Res Function(HeroProfileStateLoading) then) =
-      _$HeroProfileStateLoadingCopyWithImpl<$Res>;
+abstract class $LocationProfileStateLoadingCopyWith<$Res> {
+  factory $LocationProfileStateLoadingCopyWith(
+          LocationProfileStateLoading value,
+          $Res Function(LocationProfileStateLoading) then) =
+      _$LocationProfileStateLoadingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HeroProfileStateLoadingCopyWithImpl<$Res>
-    extends _$HeroProfileStateCopyWithImpl<$Res>
-    implements $HeroProfileStateLoadingCopyWith<$Res> {
-  _$HeroProfileStateLoadingCopyWithImpl(HeroProfileStateLoading _value,
-      $Res Function(HeroProfileStateLoading) _then)
-      : super(_value, (v) => _then(v as HeroProfileStateLoading));
+class _$LocationProfileStateLoadingCopyWithImpl<$Res>
+    extends _$LocationProfileStateCopyWithImpl<$Res>
+    implements $LocationProfileStateLoadingCopyWith<$Res> {
+  _$LocationProfileStateLoadingCopyWithImpl(LocationProfileStateLoading _value,
+      $Res Function(LocationProfileStateLoading) _then)
+      : super(_value, (v) => _then(v as LocationProfileStateLoading));
 
   @override
-  HeroProfileStateLoading get _value => super._value as HeroProfileStateLoading;
+  LocationProfileStateLoading get _value =>
+      super._value as LocationProfileStateLoading;
 }
 
 /// @nodoc
 
-class _$HeroProfileStateLoading
+class _$LocationProfileStateLoading
     with DiagnosticableTreeMixin
-    implements HeroProfileStateLoading {
-  const _$HeroProfileStateLoading();
+    implements LocationProfileStateLoading {
+  const _$LocationProfileStateLoading();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileState.loading()';
+    return 'LocationProfileState.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'HeroProfileState.loading'));
+    properties
+      ..add(DiagnosticsProperty('type', 'LocationProfileState.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HeroProfileStateLoading);
+    return identical(this, other) || (other is LocationProfileStateLoading);
   }
 
   @override
@@ -463,8 +472,8 @@ class _$HeroProfileStateLoading
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)
+    required TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)
         data,
   }) {
     return loading();
@@ -476,8 +485,8 @@ class _$HeroProfileStateLoading
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)?
+    TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)?
         data,
     required TResult orElse(),
   }) {
@@ -490,10 +499,10 @@ class _$HeroProfileStateLoading
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HeroProfileStateInitial value) initial,
-    required TResult Function(HeroProfileStateLoading value) loading,
-    required TResult Function(HeroProfileStateError value) error,
-    required TResult Function(HeroProfileStateData value) data,
+    required TResult Function(LocationProfileStateInitial value) initial,
+    required TResult Function(LocationProfileStateLoading value) loading,
+    required TResult Function(LocationProfileStateError value) error,
+    required TResult Function(LocationProfileStateData value) data,
   }) {
     return loading(this);
   }
@@ -501,10 +510,10 @@ class _$HeroProfileStateLoading
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HeroProfileStateInitial value)? initial,
-    TResult Function(HeroProfileStateLoading value)? loading,
-    TResult Function(HeroProfileStateError value)? error,
-    TResult Function(HeroProfileStateData value)? data,
+    TResult Function(LocationProfileStateInitial value)? initial,
+    TResult Function(LocationProfileStateLoading value)? loading,
+    TResult Function(LocationProfileStateError value)? error,
+    TResult Function(LocationProfileStateData value)? data,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -514,50 +523,51 @@ class _$HeroProfileStateLoading
   }
 }
 
-abstract class HeroProfileStateLoading implements HeroProfileState {
-  const factory HeroProfileStateLoading() = _$HeroProfileStateLoading;
+abstract class LocationProfileStateLoading implements LocationProfileState {
+  const factory LocationProfileStateLoading() = _$LocationProfileStateLoading;
 }
 
 /// @nodoc
-abstract class $HeroProfileStateErrorCopyWith<$Res> {
-  factory $HeroProfileStateErrorCopyWith(HeroProfileStateError value,
-          $Res Function(HeroProfileStateError) then) =
-      _$HeroProfileStateErrorCopyWithImpl<$Res>;
+abstract class $LocationProfileStateErrorCopyWith<$Res> {
+  factory $LocationProfileStateErrorCopyWith(LocationProfileStateError value,
+          $Res Function(LocationProfileStateError) then) =
+      _$LocationProfileStateErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$HeroProfileStateErrorCopyWithImpl<$Res>
-    extends _$HeroProfileStateCopyWithImpl<$Res>
-    implements $HeroProfileStateErrorCopyWith<$Res> {
-  _$HeroProfileStateErrorCopyWithImpl(
-      HeroProfileStateError _value, $Res Function(HeroProfileStateError) _then)
-      : super(_value, (v) => _then(v as HeroProfileStateError));
+class _$LocationProfileStateErrorCopyWithImpl<$Res>
+    extends _$LocationProfileStateCopyWithImpl<$Res>
+    implements $LocationProfileStateErrorCopyWith<$Res> {
+  _$LocationProfileStateErrorCopyWithImpl(LocationProfileStateError _value,
+      $Res Function(LocationProfileStateError) _then)
+      : super(_value, (v) => _then(v as LocationProfileStateError));
 
   @override
-  HeroProfileStateError get _value => super._value as HeroProfileStateError;
+  LocationProfileStateError get _value =>
+      super._value as LocationProfileStateError;
 }
 
 /// @nodoc
 
-class _$HeroProfileStateError
+class _$LocationProfileStateError
     with DiagnosticableTreeMixin
-    implements HeroProfileStateError {
-  const _$HeroProfileStateError();
+    implements LocationProfileStateError {
+  const _$LocationProfileStateError();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileState.error()';
+    return 'LocationProfileState.error()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'HeroProfileState.error'));
+    properties..add(DiagnosticsProperty('type', 'LocationProfileState.error'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is HeroProfileStateError);
+    return identical(this, other) || (other is LocationProfileStateError);
   }
 
   @override
@@ -569,8 +579,8 @@ class _$HeroProfileStateError
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)
+    required TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)
         data,
   }) {
     return error();
@@ -582,8 +592,8 @@ class _$HeroProfileStateError
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)?
+    TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)?
         data,
     required TResult orElse(),
   }) {
@@ -596,10 +606,10 @@ class _$HeroProfileStateError
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HeroProfileStateInitial value) initial,
-    required TResult Function(HeroProfileStateLoading value) loading,
-    required TResult Function(HeroProfileStateError value) error,
-    required TResult Function(HeroProfileStateData value) data,
+    required TResult Function(LocationProfileStateInitial value) initial,
+    required TResult Function(LocationProfileStateLoading value) loading,
+    required TResult Function(LocationProfileStateError value) error,
+    required TResult Function(LocationProfileStateData value) data,
   }) {
     return error(this);
   }
@@ -607,10 +617,10 @@ class _$HeroProfileStateError
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HeroProfileStateInitial value)? initial,
-    TResult Function(HeroProfileStateLoading value)? loading,
-    TResult Function(HeroProfileStateError value)? error,
-    TResult Function(HeroProfileStateData value)? data,
+    TResult Function(LocationProfileStateInitial value)? initial,
+    TResult Function(LocationProfileStateLoading value)? loading,
+    TResult Function(LocationProfileStateError value)? error,
+    TResult Function(LocationProfileStateData value)? data,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -620,99 +630,102 @@ class _$HeroProfileStateError
   }
 }
 
-abstract class HeroProfileStateError implements HeroProfileState {
-  const factory HeroProfileStateError() = _$HeroProfileStateError;
+abstract class LocationProfileStateError implements LocationProfileState {
+  const factory LocationProfileStateError() = _$LocationProfileStateError;
 }
 
 /// @nodoc
-abstract class $HeroProfileStateDataCopyWith<$Res> {
-  factory $HeroProfileStateDataCopyWith(HeroProfileStateData value,
-          $Res Function(HeroProfileStateData) then) =
-      _$HeroProfileStateDataCopyWithImpl<$Res>;
+abstract class $LocationProfileStateDataCopyWith<$Res> {
+  factory $LocationProfileStateDataCopyWith(LocationProfileStateData value,
+          $Res Function(LocationProfileStateData) then) =
+      _$LocationProfileStateDataCopyWithImpl<$Res>;
   $Res call(
-      {HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList});
+      {LocationModel currentLocation,
+      List<HeroModel> currentLocationHeroesList});
 }
 
 /// @nodoc
-class _$HeroProfileStateDataCopyWithImpl<$Res>
-    extends _$HeroProfileStateCopyWithImpl<$Res>
-    implements $HeroProfileStateDataCopyWith<$Res> {
-  _$HeroProfileStateDataCopyWithImpl(
-      HeroProfileStateData _value, $Res Function(HeroProfileStateData) _then)
-      : super(_value, (v) => _then(v as HeroProfileStateData));
+class _$LocationProfileStateDataCopyWithImpl<$Res>
+    extends _$LocationProfileStateCopyWithImpl<$Res>
+    implements $LocationProfileStateDataCopyWith<$Res> {
+  _$LocationProfileStateDataCopyWithImpl(LocationProfileStateData _value,
+      $Res Function(LocationProfileStateData) _then)
+      : super(_value, (v) => _then(v as LocationProfileStateData));
 
   @override
-  HeroProfileStateData get _value => super._value as HeroProfileStateData;
+  LocationProfileStateData get _value =>
+      super._value as LocationProfileStateData;
 
   @override
   $Res call({
-    Object? currentHero = freezed,
-    Object? currentHeroEpisodesList = freezed,
+    Object? currentLocation = freezed,
+    Object? currentLocationHeroesList = freezed,
   }) {
-    return _then(HeroProfileStateData(
-      currentHero: currentHero == freezed
-          ? _value.currentHero
-          : currentHero // ignore: cast_nullable_to_non_nullable
-              as HeroModel,
-      currentHeroEpisodesList: currentHeroEpisodesList == freezed
-          ? _value.currentHeroEpisodesList
-          : currentHeroEpisodesList // ignore: cast_nullable_to_non_nullable
-              as List<EpisodeModel>,
+    return _then(LocationProfileStateData(
+      currentLocation: currentLocation == freezed
+          ? _value.currentLocation
+          : currentLocation // ignore: cast_nullable_to_non_nullable
+              as LocationModel,
+      currentLocationHeroesList: currentLocationHeroesList == freezed
+          ? _value.currentLocationHeroesList
+          : currentLocationHeroesList // ignore: cast_nullable_to_non_nullable
+              as List<HeroModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$HeroProfileStateData
+class _$LocationProfileStateData
     with DiagnosticableTreeMixin
-    implements HeroProfileStateData {
-  const _$HeroProfileStateData(
-      {required this.currentHero, required this.currentHeroEpisodesList});
+    implements LocationProfileStateData {
+  const _$LocationProfileStateData(
+      {required this.currentLocation, required this.currentLocationHeroesList});
 
   @override
-  final HeroModel currentHero;
+  final LocationModel currentLocation;
   @override
-  final List<EpisodeModel> currentHeroEpisodesList;
+  final List<HeroModel> currentLocationHeroesList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileState.data(currentHero: $currentHero, currentHeroEpisodesList: $currentHeroEpisodesList)';
+    return 'LocationProfileState.data(currentLocation: $currentLocation, currentLocationHeroesList: $currentLocationHeroesList)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HeroProfileState.data'))
-      ..add(DiagnosticsProperty('currentHero', currentHero))
+      ..add(DiagnosticsProperty('type', 'LocationProfileState.data'))
+      ..add(DiagnosticsProperty('currentLocation', currentLocation))
       ..add(DiagnosticsProperty(
-          'currentHeroEpisodesList', currentHeroEpisodesList));
+          'currentLocationHeroesList', currentLocationHeroesList));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HeroProfileStateData &&
-            (identical(other.currentHero, currentHero) ||
+        (other is LocationProfileStateData &&
+            (identical(other.currentLocation, currentLocation) ||
                 const DeepCollectionEquality()
-                    .equals(other.currentHero, currentHero)) &&
-            (identical(
-                    other.currentHeroEpisodesList, currentHeroEpisodesList) ||
+                    .equals(other.currentLocation, currentLocation)) &&
+            (identical(other.currentLocationHeroesList,
+                    currentLocationHeroesList) ||
                 const DeepCollectionEquality().equals(
-                    other.currentHeroEpisodesList, currentHeroEpisodesList)));
+                    other.currentLocationHeroesList,
+                    currentLocationHeroesList)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(currentHero) ^
-      const DeepCollectionEquality().hash(currentHeroEpisodesList);
+      const DeepCollectionEquality().hash(currentLocation) ^
+      const DeepCollectionEquality().hash(currentLocationHeroesList);
 
   @JsonKey(ignore: true)
   @override
-  $HeroProfileStateDataCopyWith<HeroProfileStateData> get copyWith =>
-      _$HeroProfileStateDataCopyWithImpl<HeroProfileStateData>(
+  $LocationProfileStateDataCopyWith<LocationProfileStateData> get copyWith =>
+      _$LocationProfileStateDataCopyWithImpl<LocationProfileStateData>(
           this, _$identity);
 
   @override
@@ -721,11 +734,11 @@ class _$HeroProfileStateData
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() error,
-    required TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)
+    required TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)
         data,
   }) {
-    return data(currentHero, currentHeroEpisodesList);
+    return data(currentLocation, currentLocationHeroesList);
   }
 
   @override
@@ -734,13 +747,13 @@ class _$HeroProfileStateData
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? error,
-    TResult Function(
-            HeroModel currentHero, List<EpisodeModel> currentHeroEpisodesList)?
+    TResult Function(LocationModel currentLocation,
+            List<HeroModel> currentLocationHeroesList)?
         data,
     required TResult orElse(),
   }) {
     if (data != null) {
-      return data(currentHero, currentHeroEpisodesList);
+      return data(currentLocation, currentLocationHeroesList);
     }
     return orElse();
   }
@@ -748,10 +761,10 @@ class _$HeroProfileStateData
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(HeroProfileStateInitial value) initial,
-    required TResult Function(HeroProfileStateLoading value) loading,
-    required TResult Function(HeroProfileStateError value) error,
-    required TResult Function(HeroProfileStateData value) data,
+    required TResult Function(LocationProfileStateInitial value) initial,
+    required TResult Function(LocationProfileStateLoading value) loading,
+    required TResult Function(LocationProfileStateError value) error,
+    required TResult Function(LocationProfileStateData value) data,
   }) {
     return data(this);
   }
@@ -759,10 +772,10 @@ class _$HeroProfileStateData
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(HeroProfileStateInitial value)? initial,
-    TResult Function(HeroProfileStateLoading value)? loading,
-    TResult Function(HeroProfileStateError value)? error,
-    TResult Function(HeroProfileStateData value)? data,
+    TResult Function(LocationProfileStateInitial value)? initial,
+    TResult Function(LocationProfileStateLoading value)? loading,
+    TResult Function(LocationProfileStateError value)? error,
+    TResult Function(LocationProfileStateData value)? data,
     required TResult orElse(),
   }) {
     if (data != null) {
@@ -772,16 +785,16 @@ class _$HeroProfileStateData
   }
 }
 
-abstract class HeroProfileStateData implements HeroProfileState {
-  const factory HeroProfileStateData(
-          {required HeroModel currentHero,
-          required List<EpisodeModel> currentHeroEpisodesList}) =
-      _$HeroProfileStateData;
+abstract class LocationProfileStateData implements LocationProfileState {
+  const factory LocationProfileStateData(
+          {required LocationModel currentLocation,
+          required List<HeroModel> currentLocationHeroesList}) =
+      _$LocationProfileStateData;
 
-  HeroModel get currentHero => throw _privateConstructorUsedError;
-  List<EpisodeModel> get currentHeroEpisodesList =>
+  LocationModel get currentLocation => throw _privateConstructorUsedError;
+  List<HeroModel> get currentLocationHeroesList =>
       throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $HeroProfileStateDataCopyWith<HeroProfileStateData> get copyWith =>
+  $LocationProfileStateDataCopyWith<LocationProfileStateData> get copyWith =>
       throw _privateConstructorUsedError;
 }

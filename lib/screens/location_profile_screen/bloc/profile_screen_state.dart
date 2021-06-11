@@ -1,15 +1,15 @@
 part of "profile_screen_bloc.dart";
 
 @freezed
-class HeroProfileState /*extends Equatable*/ with _$HeroProfileState {
-  const factory HeroProfileState.initial() = HeroProfileStateInitial;
+class LocationProfileState /*extends Equatable*/ with _$LocationProfileState {
+  const factory LocationProfileState.initial() = LocationProfileStateInitial;
 
-  const factory HeroProfileState.loading() = HeroProfileStateLoading;
+  const factory LocationProfileState.loading() = LocationProfileStateLoading;
 
-  const factory HeroProfileState.error() = HeroProfileStateError;
+  const factory LocationProfileState.error() = LocationProfileStateError;
 
-  const factory HeroProfileState.data({
-    required HeroModel currentHero,
-    required List<EpisodeModel> currentHeroEpisodesList,
-  }) = HeroProfileStateData;
+  const factory LocationProfileState.data({
+    required LocationModel currentLocation,
+    required List<HeroModel> currentLocationHeroesList,
+  }) = LocationProfileStateData;
 }

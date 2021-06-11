@@ -1,10 +1,10 @@
 part of "profile_screen_bloc.dart";
 
 @freezed
-class HeroProfileEvent with _$HeroProfileEvent {
-  const factory HeroProfileEvent.initial({
-    required HeroModel currentHero,
-  }) = _HeroProfileEventInitial;
+class LocationProfileEvent with _$LocationProfileEvent {
+  const factory LocationProfileEvent.initial({
+    required LocationModel currentLocation,
+  }) = LocationProfileEventInitial;
 
   // const factory  HeroProfileEvent.error() = _HeroProfileEventError;
 }

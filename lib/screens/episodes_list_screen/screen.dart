@@ -10,7 +10,7 @@ import 'package:rick_morty_01/screens/locations_list_screen/bloc/locations_list_
 
 import 'package:rick_morty_01/theme/color_theme.dart';
 
-class LocationsListScreen extends StatelessWidget {
+class EpisodesListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     LocationsListBloc locationsListbloc =

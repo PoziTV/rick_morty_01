@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'dart:ui';
 
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
-import 'package:rick_morty_01/screens/heros_list_screen/widgets/state_data_to_widget.dart';
+import 'package:rick_morty_01/screens/hero_profile_screen/widgets/state_data_to_widget.dart';
 
 class HeroProfileScreen extends StatelessWidget {
   HeroProfileScreen();

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 
 import 'package:rick_morty_01/data/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
-import 'package:rick_morty_01/screens/heros_list_screen/bloc/select_heros_screen_bloc.dart';
+import 'package:rick_morty_01/screens/heroes_list_screen/bloc/select_heros_screen_bloc.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
+
+import 'package:rick_morty_01/screens/heroes_list_screen/widgets/hero_card.dart';
 
 class HeroesListView extends StatelessWidget {
   SelectHeroesBloc selectHeroesBloc = SelectHeroesBloc();
@@ -23,7 +25,7 @@ class HeroesListView extends StatelessWidget {
     return ListView.separated(
       itemCount: /*heroesList!.length*/ selectHeroesBloc.heroesTotal,
       itemBuilder: (BuildContext context, int index) => InkWell(
-        child: _HeroListViewItem(heroesList![index]),
+        child: HeroCard(currentHero: heroesList![index]),
         // ),
         onTap: () {
           // var bloc_1 = HeroProfileBloc();
@@ -45,39 +47,4 @@ class HeroesListView extends StatelessWidget {
       ),
     );
   }
-}
-
-_HeroListViewItem(HeroModel heroListItem) {
-  return Row(
-    children: [
-      CircleAvatar(
-        radius: 37,
-        backgroundImage: Image.asset(heroListItem.ava).image,
-      ),
-      Container(
-        width: 18,
-      ),
-      Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            heroListItem.aliveStatus,
-            style: themeTextStyles.textAppearanceOverline.copyWith(
-              color: heroListItem.aliveStatus == "ЖИВОЙ"
-                  ? themeColorPalette.AliveGreen
-                  : themeColorPalette.AliveREd,
-            ),
-          ),
-          Text(
-            heroListItem.name,
-            style: themeTextStyles.textAppearanceSubtitle2,
-          ),
-          Text(
-            "${heroListItem.bio}, ${heroListItem.sex}",
-            style: themeTextStyles.textAppearanceCaption,
-          ),
-        ],
-      ),
-    ],
-  );
 }

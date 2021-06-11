@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_01/data/hero_model.dart';
-import 'package:rick_morty_01/screens/heros_list_screen/widgets/grid_view.dart';
-import 'package:rick_morty_01/screens/heros_list_screen/widgets/list_view.dart';
+import 'package:rick_morty_01/screens/heroes_list_screen/widgets/grid_view.dart';
+import 'package:rick_morty_01/screens/heroes_list_screen/widgets/list_view.dart';
 
 class SelectableHeroesList extends StatelessWidget {
   final bool isGrid;
