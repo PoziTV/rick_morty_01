@@ -7,6 +7,7 @@ class EpisodeModel {
   final String episodeName;
   final String episodePremierDate;
   final String episodeScreen;
+  final String episodeDesc;
 
   EpisodeModel({
     @required this.episodeId = 0,
@@ -15,5 +16,6 @@ class EpisodeModel {
     @required this.episodeName = "",
     @required this.episodePremierDate = "",
     @required this.episodeScreen = "",
+    @required this.episodeDesc = "",
   });
 }

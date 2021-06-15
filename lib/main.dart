@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/home_screen/screen.dart';
-import 'package:rick_morty_01/screens/heroes_list_screen/screen.dart';
-import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
+import 'package:rick_morty_01/theme/color_theme.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,6 +21,7 @@ class MyApp extends StatelessWidget {
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            unselectedWidgetColor:themeColorPalette.HintText,
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           home: DefaultTextStyle(

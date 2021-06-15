@@ -2,39 +2,40 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import "package:flutter/foundation.dart";
+import 'package:rick_morty_01/data/episode_model.dart';
 
 import 'package:rick_morty_01/data/hero_model.dart';
 import 'package:rick_morty_01/data/location_model.dart';
 import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
-part "profile_screen_event.dart";
-part "profile_screen_state.dart";
-part 'profile_screen_bloc.freezed.dart';
+part "episod_profile_screen_event.dart";
+part "episod_profile_screen_state.dart";
+part 'episod_profile_screen_bloc.freezed.dart';
 
-class LocationProfileBloc
-    extends Bloc<LocationProfileEvent, LocationProfileState> {
-  LocationProfileBloc._internal() : super(LocationProfileState.initial());
+class EpisodProfileBloc
+    extends Bloc<EpisodProfileEvent, EpisodProfileState> {
+  EpisodProfileBloc._internal() : super(EpisodProfileState.initial());
 
-  factory LocationProfileBloc() {
+  factory EpisodProfileBloc() {
     return _singleton;
   }
 
-  static final LocationProfileBloc _singleton = LocationProfileBloc._internal();
+  static final EpisodProfileBloc _singleton = EpisodProfileBloc._internal();
 
   @override
-  Stream<LocationProfileState> mapEventToState(
-      LocationProfileEvent event) async* {
+  Stream<EpisodProfileState> mapEventToState(
+      EpisodProfileEvent event) async* {
     yield* event.map(
-      initial: _mapInitialLocationProfileEvent,
+      initial: _mapInitialEpisodProfileEvent,
     );
   }
 
-  Stream<LocationProfileState> _mapInitialLocationProfileEvent(
-      LocationProfileEventInitial event) async* {
+  Stream<EpisodProfileState> _mapInitialEpisodProfileEvent(
+      EpisodProfileEventInitial event) async* {
 
     // LocationModel currentLocation;
 
-    yield LocationProfileState.loading();
+    yield EpisodProfileState.loading();
     try {
       // получаем список номеров серий текущего героя
       // EpisodesNumList = heroesEpisodes[event.currentHero.heroId];
@@ -44,16 +45,16 @@ class LocationProfileBloc
       // }); // получаем список серий текущего героя
 
     } catch (ex) {
-      yield LocationProfileState.error();
+      yield EpisodProfileState.error();
     }
 
-    yield LocationProfileState.loading();
+    yield EpisodProfileState.loading();
 
     await Future.delayed(const Duration(seconds: 1), () {});
 
-    yield LocationProfileState.data(
-      currentLocation: event.currentLocation,
-      currentLocationHeroesList: heroesList,
+    yield EpisodProfileState.data(
+      currentEpisod: event.currentEpisod,
+      currentEpisodHeroesList: heroesList,
     );
   }
 }

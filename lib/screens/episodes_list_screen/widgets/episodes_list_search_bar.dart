@@ -7,10 +7,10 @@ import 'package:rick_morty_01/theme/text_theme.dart';
 
 TextEditingController _textController = TextEditingController();
 
-class LocationsListSearchBar extends StatelessWidget {
+class EpisodesListSearchBar extends StatelessWidget {
 final String title;
 
-LocationsListSearchBar({this.title = ''});
+EpisodesListSearchBar({this.title = ''});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,8 @@ LocationsListSearchBar({this.title = ''});
       margin: EdgeInsets.only(
         top: 11,
       ),
-      height: 50,
+      padding: EdgeInsets.only(bottom: 8),
+      height: (58),
       child: TextField(
         controller: _textController,
         decoration: InputDecoration(

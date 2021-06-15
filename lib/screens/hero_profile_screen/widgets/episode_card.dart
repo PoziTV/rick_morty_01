@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:rick_morty_01/data/episode_model.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/episode_info.dart';

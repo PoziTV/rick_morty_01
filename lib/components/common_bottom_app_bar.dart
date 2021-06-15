@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
+import 'package:rick_morty_01/screens/episodes_list_screen/bloc/episodes_list_screen_bloc.dart';
+import 'package:rick_morty_01/screens/episodes_list_screen/screen.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/bloc/select_heros_screen_bloc.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/screen.dart';
 import 'package:rick_morty_01/screens/locations_list_screen/bloc/locations_list_screen_bloc.dart';
 import 'package:rick_morty_01/screens/locations_list_screen/screen.dart';
+import 'package:rick_morty_01/screens/settings_screen/screen.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 
@@ -40,7 +43,6 @@ class _CommonBottomAppBarState extends State<CommonBottomAppBar> {
                           ? themeColorPalette.AliveGreen
                           : themeColorPalette.HintText,
                       width: 24,
-                      // height: 24,
                     ),
                     Text(
                       'Персонажи',
@@ -97,20 +99,23 @@ class _CommonBottomAppBarState extends State<CommonBottomAppBar> {
                     mainAxisSize: MainAxisSize.min,
                   ),
                   onTap: () {
-                    setState(() {
-                      activeItem = List.filled(4, false);
-                      activeItem[1] = true;
-                    });
+                    setState(
+                      () {
+                        activeItem = List.filled(4, false);
+                        activeItem[1] = true;
+                      },
+                    );
 
                     LocationsListBloc()
                       ..add(
                         LocationsListEvent.initial(),
                       );
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LocationsListScreen(),
-                        ));
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LocationsListScreen(),
+                      ),
+                    );
                   },
                 ),
               ),
@@ -139,10 +144,24 @@ class _CommonBottomAppBarState extends State<CommonBottomAppBar> {
                   mainAxisSize: MainAxisSize.min,
                 ),
                 onTap: () {
-                  setState(() {
-                    activeItem = List.filled(4, false);
-                    activeItem[2] = true;
-                  });
+                  setState(
+                    () {
+                      activeItem = List.filled(4, false);
+                      activeItem[2] = true;
+                    },
+                  );
+
+                  EpisodesListBloc()
+                    ..add(
+                      EpisodesListEvent.initial(),
+                    );
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EpisodesListScreen(),
+                    ),
+                  );
                 },
               ),
             ),
@@ -173,6 +192,13 @@ class _CommonBottomAppBarState extends State<CommonBottomAppBar> {
                   setState(() {
                     activeItem = List.filled(4, false);
                     activeItem[3] = true;
+
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SettingsScreen(),
+                      ),
+                    );
                   });
                 },
               ),

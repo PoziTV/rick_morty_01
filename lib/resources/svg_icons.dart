@@ -9,4 +9,7 @@ class SvgIcons {
   static const String Settings = 'assets/svg_icons/settings.svg';
   static const String Locations = 'assets/svg_icons/locations.svg';
   static const String Episodes = 'assets/svg_icons/episodes.svg';
+  static const String Play = 'assets/svg_icons/play.svg';
+  static const String PaletteSvg = 'assets/svg_icons/palette.svg';
+  static const String PalettePng = 'assets/svg_icons/palette.png';
 }

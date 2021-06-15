@@ -8,6 +8,7 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "2 декабря 2013",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_1.png",
+    episodeDesc: 'Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
   EpisodeModel(
     episodeId: 2,
@@ -16,6 +17,7 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "9 декабря 2013",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_2.png",
+    episodeDesc: '2 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
   EpisodeModel(
     episodeId: 3,
@@ -24,6 +26,7 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "16 декабря 2013",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_3.png",
+    episodeDesc: '3 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
   EpisodeModel(
     episodeId: 4,
@@ -32,6 +35,7 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "13 января 2014",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_4.png",
+    episodeDesc: '4 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
   EpisodeModel(
     episodeId: 5,
@@ -40,6 +44,7 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "20 января 2014",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_5.png",
+    episodeDesc: '5 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
   EpisodeModel(
     episodeId: 6,
@@ -48,5 +53,15 @@ List<EpisodeModel> episodesList = [
     episodePremierDate: "20 января 2014",
     episodeSeason: 1,
     episodeScreen: "assets/images/episodes/e_6.png",
+    episodeDesc: '6 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
+  ),
+  EpisodeModel(
+    episodeId: 7,
+    episodeNum: 7,
+    episodeName: "Воспитание Газорпазорпа",
+    episodePremierDate: "20 января 2014",
+    episodeSeason: 1,
+    episodeScreen: "assets/images/episodes/e_7.png",
+    episodeDesc: '7 - Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концен-трирован- ной темной материи.',
   ),
 ];
