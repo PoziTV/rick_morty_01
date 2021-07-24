@@ -17,15 +17,16 @@ class HeroesListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<HeroModel>? heroesList = selectHeroesBloc.blocHeroesList;
+    final List<HeroModel> heroesList = selectHeroesBloc.blocHeroesList;
+    // print('length: ${heroesList!.length}');
 
     HeroProfileBloc heroProfileBloc = HeroProfileBloc();
 
     // SelectHeroesBloc selectHeroesBloc = SelectHeroesBloc();
     return ListView.separated(
-      itemCount: /*heroesList!.length*/ selectHeroesBloc.heroesTotal,
+      itemCount: heroesList.length /*selectHeroesBloc.heroesTotal*/,
       itemBuilder: (BuildContext context, int index) => InkWell(
-        child: HeroCard(currentHero: heroesList![index]),
+        child: HeroCard(currentHero: heroesList[index]),
         // ),
         onTap: () {
           // var bloc_1 = HeroProfileBloc();

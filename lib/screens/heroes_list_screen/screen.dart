@@ -75,7 +75,7 @@ class SelectHerosScreen extends StatelessWidget {
                   child: Text("State Error"),
                 ),
               ),
-              bottomNavigationBar: CommonBottomAppBar(),
+              bottomNavigationBar: CommonBottomAppBar.Heroes(),
             );
           },
         ),

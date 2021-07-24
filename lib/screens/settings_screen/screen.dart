@@ -160,7 +160,7 @@ class SettingsScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: CommonBottomAppBar(),
+      bottomNavigationBar: CommonBottomAppBar.Settings(),
     );
   }
 }

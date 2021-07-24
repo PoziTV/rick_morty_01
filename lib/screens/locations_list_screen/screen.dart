@@ -61,7 +61,7 @@ class LocationsListScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                bottomNavigationBar: CommonBottomAppBar(),
+                bottomNavigationBar: CommonBottomAppBar.Locations(),
               );
             }),
       ),

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
@@ -36,7 +37,6 @@ class EpisodProfileStateDataToWidget extends StatelessWidget {
             onTap: () {
               Navigator.pop(initialContext);
             },
-
           ),
         ),
         elevation: 0,
@@ -53,9 +53,43 @@ class EpisodProfileStateDataToWidget extends StatelessWidget {
                 Container(
                   height: 274,
                   decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.77),
+                        Color.fromRGBO(11, 30, 45, 0.18),
+                        Color.fromRGBO(11, 30, 45, 0),
+                        Color.fromRGBO(11, 30, 45, 0),
+                        Colors.black,
+                      ],
+                    ),
                     image: DecorationImage(
                       fit: BoxFit.fitHeight,
                       image: AssetImage(state.currentEpisod.episodeScreen),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 274,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(0.77),
+                        Color.fromRGBO(11, 30, 45, 0.18),
+                        Color.fromRGBO(11, 30, 45, 0),
+                        Color.fromRGBO(11, 30, 45, 0),
+                        Colors.black,
+                      ],
+                      stops: [
+                        0,
+                        32.69,
+                        45.57,
+                        68.93,
+                        100,
+                      ],
                     ),
                   ),
                 ),
@@ -68,29 +102,37 @@ class EpisodProfileStateDataToWidget extends StatelessWidget {
                     ),
                   ),
                   margin: EdgeInsets.only(top: 251),
-                  padding: EdgeInsets.only(left: 16, right: 16),
-                  child: Column(children: [
-                    EpisodInfo(currentEpisod: state.currentEpisod),
-                    Row(
-                      children: [
-                        Text(
-                          "Персонажи",
-                          style: themeTextStyles.textAppearanceHeadline6,
-                        ),
-                      ],
-                    ),
-                    EpisodHeroesList(
-                      currentEpisodHerosList: state.currentEpisodHeroesList,
-                    ),
-                  ]),
+                  padding: EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      EpisodInfo(currentEpisod: state.currentEpisod),
+                      Divider(
+                        height: 70,
+                        thickness: 2,
+                        color: themeColorPalette.SearchBarBackGround,
+                      ),
+                      Text(
+                        "Персонажи",
+                        style: themeTextStyles.textAppearanceHeadline6,
+                      ),
+                      EpisodHeroesList(
+                        currentEpisodHerosList: state.currentEpisodHeroesList,
+                      ),
+                    ],
+                  ),
                 ),
                 Positioned(
-                  top: 185,
+                  top: 170,
                   child: IconButton(
-                    iconSize: 132,
-                    icon: SvgPicture.asset(SvgIcons.Play),
+                    padding: EdgeInsets.all(0),
+                    iconSize: 152,
+                    icon: SvgPicture.asset(SvgIcons.Play,),
                     onPressed: () {
-                      print('поиграй со мной');
+                      print('смотрим ${state.currentEpisod.episodeName}');
                     },
                   ),
                 )

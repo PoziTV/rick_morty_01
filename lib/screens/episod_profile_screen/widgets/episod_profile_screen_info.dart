@@ -14,7 +14,7 @@ class EpisodInfo extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Padding(padding: EdgeInsets.only(top: 34)),
+            Padding(padding: EdgeInsets.only(top: 82)),
             Text(
               currentEpisod.episodeName,
               style: themeTextStyles.textEpisodProfileName,
@@ -22,26 +22,29 @@ class EpisodInfo extends StatelessWidget {
             Padding(padding: EdgeInsets.only(top: 3)),
             Text(
               'СЕРИЯ ${currentEpisod.episodeNum}',
-              style: themeTextStyles.textAppearanceCaption,
+              style: themeTextStyles.textOverline,
             ),
           ],
         ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(padding: EdgeInsets.only(top: 32)),
+            Padding(padding: EdgeInsets.only(top: 36)),
             Text(
               currentEpisod.episodeDesc,
               style: themeTextStyles.textDescription,
             ),
-            Padding(padding: EdgeInsets.only(top: 36)),
+            Padding(padding: EdgeInsets.only(top: 24)),
             Text(
               'ПРЕМЬЕРА',
-              style: themeTextStyles.textDescription,
+              style: themeTextStyles.textAppearanceCaption.copyWith(
+                color: themeColorPalette.HintText,
+              ),
             ),
+            Padding(padding: EdgeInsets.only(top: 3)),
             Text(
               currentEpisod.episodePremierDate,
-              style: themeTextStyles.textDescription,
+              style: themeTextStyles.textAppearanceBody2,
             ),
           ],
         )

@@ -18,6 +18,9 @@ class EpisodesListScreen extends StatelessWidget {
         EpisodesListBloc(); // ini bloc LocationList
     episodesListbloc
       ..add(EpisodesListEventInitial()); // ini странцу списком локаций
+    // CommonBottomAppBarState.activeItem. = true;
+    // CommonBottomAppBarState.activeItem[2] = true;
+    print('dddd');
     return Container(
       decoration: BoxDecoration(
         color: themeColorPalette.ScreenBackGround,
@@ -61,7 +64,7 @@ class EpisodesListScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                bottomNavigationBar: CommonBottomAppBar(),
+                bottomNavigationBar: CommonBottomAppBar.Episodes(),
               );
             }),
       ),

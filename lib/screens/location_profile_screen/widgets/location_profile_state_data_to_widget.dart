@@ -29,11 +29,12 @@ class LocationProfileStateDataToWidget extends StatelessWidget {
             left: 10,
           ),
           child: FloatingActionButton(
+            elevation: 0,
             child: SvgPicture.asset(SvgIcons.ArrowBack),
             onPressed: () {
               Navigator.pop(initialContext);
             },
-            backgroundColor: themeColorPalette.ScreenBackGround,
+            backgroundColor: Colors.transparent/*themeColorPalette.ScreenBackGround*/,
           ),
         ),
         elevation: 0,

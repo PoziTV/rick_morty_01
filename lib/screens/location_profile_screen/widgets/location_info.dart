@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_01/data/location_model.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
-import 'package:rick_morty_01/theme/color_theme.dart';
 
 class LocationInfo extends StatelessWidget {
   LocationModel currentLocation;

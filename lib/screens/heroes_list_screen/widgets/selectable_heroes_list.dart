@@ -16,7 +16,7 @@ class SelectableHeroesList extends StatelessWidget {
       // child:
       isGrid
           ? HeroesListView(/*heroesList: heroesList*/)
-          : HeroesGridView(heroesList: heroesList);
+          : HeroesGridView(/*heroesList: heroesList*/);
     // );
   }
 }
