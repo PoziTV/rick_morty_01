@@ -271,7 +271,7 @@ class CommonBottomAppBar extends StatelessWidget {
           right: 10,
           top: 8,
           bottom: 12,
-        ), 
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [

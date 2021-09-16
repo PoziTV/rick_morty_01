@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_01/data/hero_model.dart';
+import 'package:rick_morty_01/data/network/models/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/legend_card.dart';
 
 class HeroLegend extends StatelessWidget {

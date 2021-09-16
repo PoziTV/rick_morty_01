@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:rick_morty_01/data/location_model.dart';
+import 'package:rick_morty_01/data/network/models/location_model.dart';
 
 import 'package:rick_morty_01/screens/location_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/location_profile_screen/screen.dart';

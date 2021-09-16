@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:rick_morty_01/data/episode_model.dart';
+import 'package:rick_morty_01/data/network/models/episode_model.dart';
 import 'package:rick_morty_01/screens/episod_profile_screen/bloc/episod_profile_screen_bloc.dart';
 
 import 'package:rick_morty_01/screens/episod_profile_screen/screen.dart';

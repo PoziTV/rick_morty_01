@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import "package:flutter/foundation.dart";
 
-import 'package:rick_morty_01/data/location_model.dart';
+import 'package:rick_morty_01/data/network/models/location_model.dart';
 import 'package:rick_morty_01/resources/variables/locations_list.dart';
 
 part 'locations_list_screen_event.dart';

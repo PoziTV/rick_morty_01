@@ -32,6 +32,7 @@ dependencies:
   flutter_bloc: ^7.0.0
   equatable: ^2.0.2
   freezed_annotation: ^0.14.2
+  dio: ^4.0.0
 
 
 dev_dependencies:

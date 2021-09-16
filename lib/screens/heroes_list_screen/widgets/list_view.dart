@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:rick_morty_01/data/hero_model.dart';
+import 'package:rick_morty_01/data/network/models/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/bloc/select_heros_screen_bloc.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
