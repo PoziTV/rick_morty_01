@@ -1,7 +1,9 @@
 import 'package:dio/dio.dart';
 
 class DioSettings {
-  DioSettings();
+  DioSettings() {
+    initialSettings();
+  }
 
   // static final mainServer = "https://api.???.kz/";
   static final mainServer = "http://173.249.20.184:7001/api/";
@@ -18,6 +20,7 @@ class DioSettings {
     Interceptors interceptors = dio.interceptors;
 
     interceptors.requestLock.lock();
+
     interceptors.clear();
     interceptors
       ..add(
@@ -25,17 +28,29 @@ class DioSettings {
           onResponse: (response, handler) {
             if (response.statusCode == 204) {
               throw DioError(
-                requestOptions: dio.options,
+                requestOptions: response.requestOptions,
                 error: "Отсутствуют данные",
                 response: Response(
+                  requestOptions: response.requestOptions,
                   statusCode: 400,
-                  // request: response.request,
+                  // request: response.request, // в dio 4 отсутствует такой параметр в классе Response
                 ),
               );
             }
             return handler.next(response);
           },
-          onError: (DioError err, handler) {
+          onError: (DioError err, handler) async {
+            if (err.type == DioErrorType.connectTimeout) {
+              // время отведенное запросу истекло
+              print('connectTimeout');
+            } else if (err.message.contains('SocketException:')) {
+              // нет инета
+              print('SocketException');
+            } else if (err.response!.statusCode == 401) {
+              // ошибка индентификации / доступа к ресурсам сервера
+              print('statusCode = 401');
+            }
+
             return handler.next(err);
           },
         ),
