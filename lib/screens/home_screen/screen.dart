@@ -54,17 +54,19 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
         Positioned(
-            top: 246.7 * viewPortCoefficient,
-            child: Image.asset(
-              Images.word_And,
-              height: wordAndHeight * viewPortCoefficient,
-            )),
+          top: 246.7 * viewPortCoefficient,
+          child: Image.asset(
+            Images.word_And,
+            height: wordAndHeight * viewPortCoefficient,
+          ),
+        ),
         Positioned(
-            top: 241.28 * viewPortCoefficient,
-            child: Image.asset(
-              Images.word_Morty,
-              height: wordMortykHeight * viewPortCoefficient,
-            )),
+          top: 241.28 * viewPortCoefficient,
+          child: Image.asset(
+            Images.word_Morty,
+            height: wordMortykHeight * viewPortCoefficient,
+          ),
+        ),
         Positioned(
           top: viewPortHeight_05 + 3.42,
           child: Image.asset(Images.pic_Rick_01),
@@ -79,10 +81,6 @@ class HomeScreen extends StatelessWidget {
         Container(
           child: GestureDetector(
             onTap: () {
-              final serviceApi = ServiceApi();
-              dynamic resp = serviceApi.getCharacters();
-
-              print(resp);
               // Navigator.push(
               //   context,
               //   MaterialPageRoute(

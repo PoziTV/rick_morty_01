@@ -18,7 +18,7 @@ class ServiceApi {
 
   late Map<String, dynamic> _request;
 
-  Future<HeroesModel> getCharacters() async {
+  Future<HeroesModel> getAllCharacters() async {
     Map<String, dynamic> _queryParameters = {"PageNumber": 1, "PageSize": 100};
 
     final response = await _dio.get(

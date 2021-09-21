@@ -84,7 +84,7 @@ class Datum {
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
     id: json["id"],
     firstName: json["firstName"],
-    lastName: json["lastName"] == null ? null : json["lastName"],
+    lastName: json["lastName"] == null ? /*null*/ '' : json["lastName"],
     fullName: json["fullName"],
     status: json["status"],
     about: json["about"],
@@ -93,8 +93,8 @@ class Datum {
     imageName: json["imageName"],
     locationId: json["locationId"],
     location: Location.fromJson(json["location"]),
-    placeOfBirthId: json["placeOfBirthId"] == null ? null : json["placeOfBirthId"],
-    placeOfBirth: json["placeOfBirth"] == null ? null : Location.fromJson(json["placeOfBirth"]),
+    placeOfBirthId: json["placeOfBirthId"] == /*null*/ '' ? null : json["placeOfBirthId"],
+    placeOfBirth: json["placeOfBirth"] == /*null*/ '' ? null : Location.fromJson(json["placeOfBirth"]),
     episodes: List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))),
   );
 
@@ -110,8 +110,8 @@ class Datum {
     "imageName": imageName,
     "locationId": locationId,
     "location": location.toJson(),
-    "placeOfBirthId": placeOfBirthId == null ? null : placeOfBirthId,
-    "placeOfBirth": placeOfBirth == null ? null : placeOfBirth!.toJson(),
+    "placeOfBirthId": placeOfBirthId == /*null*/ '' ? null : placeOfBirthId,
+    "placeOfBirth": placeOfBirth == /*null*/ '' ? null : placeOfBirth!.toJson(),
     "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
   };
 }
