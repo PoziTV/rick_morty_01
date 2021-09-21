@@ -4,6 +4,9 @@
 
 import 'dart:convert';
 
+import 'package:rick_morty_01/data/network/models/episode.dart';
+import 'package:rick_morty_01/data/network/models/location.dart';
+
 HeroesModel heroesModelFromJson(String str) => HeroesModel.fromJson(json.decode(str));
 
 String heroesModelToJson(HeroesModel data) => json.encode(data.toJson());
@@ -101,7 +104,7 @@ class Datum {
   Map<String, dynamic> toJson() => {
     "id": id,
     "firstName": firstName,
-    "lastName": lastName == null ? null : lastName,
+    "lastName": lastName == null ? /*null*/ '' : lastName,
     "fullName": fullName,
     "status": status,
     "about": about,
@@ -116,129 +119,129 @@ class Datum {
   };
 }
 
-class Episode {
-  Episode({
-    required this.id,
-    required this.name,
-    required this.season,
-    required this.series,
-    required this.plot,
-    required this.premiere,
-    required this.imageName,
-    this.characters,
-  });
+// class Episode {
+//   Episode({
+//     required this.id,
+//     required this.name,
+//     required this.season,
+//     required this.series,
+//     required this.plot,
+//     required this.premiere,
+//     required this.imageName,
+//     this.characters,
+//   });
+//
+//   final String id;
+//   final String name;
+//   final int season;
+//   final int series;
+//   final String plot;
+//   final DateTime premiere;
+//   final String imageName;
+//   final dynamic characters;
+//
+//   factory Episode.fromJson(Map<String, dynamic> json) => Episode(
+//     id: json["id"],
+//     name: json["name"],
+//     season: json["season"],
+//     series: json["series"],
+//     plot: json["plot"],
+//     premiere: DateTime.parse(json["premiere"]),
+//     imageName: json["imageName"],
+//     characters: json["characters"],
+//   );
+//
+//   Map<String, dynamic> toJson() => {
+//     "id": id,
+//     "name": name,
+//     "season": season,
+//     "series": series,
+//     "plot": plot,
+//     "premiere": premiere.toIso8601String(),
+//     "imageName": imageName,
+//     "characters": characters,
+//   };
+// }
 
-  final String id;
-  final String name;
-  final int season;
-  final int series;
-  final String plot;
-  final DateTime premiere;
-  final String imageName;
-  final dynamic characters;
+// class Location {
+//   Location({
+//     required this.id,
+//     required this.name,
+//     required this.type,
+//     required this.measurements,
+//     required this.about,
+//     required this.imageName,
+//     required this.characters,
+//     required this.placeOfBirthCharacters,
+//   });
+//
+//   final String id;
+//   final String name;
+//   final Type? type;
+//   final Measurements? measurements;
+//   final String about;
+//   final String imageName;
+//   final List<dynamic> characters;
+//   final List<dynamic> placeOfBirthCharacters;
+//
+//   factory Location.fromJson(Map<String, dynamic> json) => Location(
+//     id: json["id"],
+//     name: json["name"],
+//     type: typeValues.map[json["type"]],
+//     measurements: measurementsValues.map[json["measurements"]],
+//     about: json["about"],
+//     imageName: json["imageName"],
+//     characters: List<dynamic>.from(json["characters"].map((x) => x)),
+//     placeOfBirthCharacters: List<dynamic>.from(json["placeOfBirthCharacters"].map((x) => x)),
+//   );
+//
+//   Map<String, dynamic> toJson() => {
+//     "id": id,
+//     "name": name,
+//     "type": typeValues.reverse[type],
+//     "measurements": measurementsValues.reverse[measurements],
+//     "about": about,
+//     "imageName": imageName,
+//     "characters": List<dynamic>.from(characters.map((x) => x)),
+//     "placeOfBirthCharacters": List<dynamic>.from(placeOfBirthCharacters.map((x) => x)),
+//   };
+// }
 
-  factory Episode.fromJson(Map<String, dynamic> json) => Episode(
-    id: json["id"],
-    name: json["name"],
-    season: json["season"],
-    series: json["series"],
-    plot: json["plot"],
-    premiere: DateTime.parse(json["premiere"]),
-    imageName: json["imageName"],
-    characters: json["characters"],
-  );
+// enum Measurements { EMPTY, MEASUREMENTS, C_137, PURPLE, THE_137, FLUFFY, TENTACLED }
+//
+// final measurementsValues = EnumValues({
+//   "C-137": Measurements.C_137,
+//   "": Measurements.EMPTY,
+//   "Измерение подмены": Measurements.FLUFFY,
+//   "Постапокалиптическое измерение": Measurements.MEASUREMENTS,
+//   "Вселенная Блендеров": Measurements.PURPLE,
+//   "Фруппиленд": Measurements.TENTACLED,
+//   "С-137": Measurements.THE_137
+// });
 
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "season": season,
-    "series": series,
-    "plot": plot,
-    "premiere": premiere.toIso8601String(),
-    "imageName": imageName,
-    "characters": characters,
-  };
-}
+// enum Type { EMPTY, TYPE, PURPLE, FLUFFY, TENTACLED, STICKY, INDIGO, INDECENT }
+//
+// final typeValues = EnumValues({
+//   "": Type.EMPTY,
+//   "Организация": Type.FLUFFY,
+//   "Искусственная крошечная вселенная": Type.INDECENT,
+//   "Созданная реальность": Type.INDIGO,
+//   "Мир": Type.PURPLE,
+//   "Здание": Type.STICKY,
+//   "Планета": Type.TENTACLED,
+//   "Измерение": Type.TYPE
+// });
+//
+// class EnumValues<T> {
+//   Map<String, T> map;
+//   late Map<T, String> reverseMap;
+//
+//    EnumValues(this.map);
+//
+//   Map<T, String> get reverse {
+//     if (reverseMap == null) {
+//       reverseMap = map.map((k, v) => new MapEntry(v, k));
+//     }
+//     return reverseMap;
+//   }
 
-class Location {
-  Location({
-    required this.id,
-    required this.name,
-    required this.type,
-    required this.measurements,
-    required this.about,
-    required this.imageName,
-    required this.characters,
-    required this.placeOfBirthCharacters,
-  });
-
-  final String id;
-  final String name;
-  final Type? type;
-  final Measurements? measurements;
-  final String about;
-  final String imageName;
-  final List<dynamic> characters;
-  final List<dynamic> placeOfBirthCharacters;
-
-  factory Location.fromJson(Map<String, dynamic> json) => Location(
-    id: json["id"],
-    name: json["name"],
-    type: typeValues.map[json["type"]],
-    measurements: measurementsValues.map[json["measurements"]],
-    about: json["about"],
-    imageName: json["imageName"],
-    characters: List<dynamic>.from(json["characters"].map((x) => x)),
-    placeOfBirthCharacters: List<dynamic>.from(json["placeOfBirthCharacters"].map((x) => x)),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "name": name,
-    "type": typeValues.reverse[type],
-    "measurements": measurementsValues.reverse[measurements],
-    "about": about,
-    "imageName": imageName,
-    "characters": List<dynamic>.from(characters.map((x) => x)),
-    "placeOfBirthCharacters": List<dynamic>.from(placeOfBirthCharacters.map((x) => x)),
-  };
-}
-
-enum Measurements { EMPTY, MEASUREMENTS, C_137, PURPLE, THE_137, FLUFFY, TENTACLED }
-
-final measurementsValues = EnumValues({
-  "C-137": Measurements.C_137,
-  "": Measurements.EMPTY,
-  "Измерение подмены": Measurements.FLUFFY,
-  "Постапокалиптическое измерение": Measurements.MEASUREMENTS,
-  "Вселенная Блендеров": Measurements.PURPLE,
-  "Фруппиленд": Measurements.TENTACLED,
-  "С-137": Measurements.THE_137
-});
-
-enum Type { EMPTY, TYPE, PURPLE, FLUFFY, TENTACLED, STICKY, INDIGO, INDECENT }
-
-final typeValues = EnumValues({
-  "": Type.EMPTY,
-  "Организация": Type.FLUFFY,
-  "Искусственная крошечная вселенная": Type.INDECENT,
-  "Созданная реальность": Type.INDIGO,
-  "Мир": Type.PURPLE,
-  "Здание": Type.STICKY,
-  "Планета": Type.TENTACLED,
-  "Измерение": Type.TYPE
-});
-
-class EnumValues<T> {
-  Map<String, T> map;
-  late Map<T, String> reverseMap;
-
-   EnumValues(this.map);
-
-  Map<T, String> get reverse {
-    if (reverseMap == null) {
-      reverseMap = map.map((k, v) => new MapEntry(v, k));
-    }
-    return reverseMap;
-  }
-}

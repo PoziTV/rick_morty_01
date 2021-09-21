@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:rick_morty_01/components/common_bottom_app_bar.dart';
 
-import 'package:rick_morty_01/data/network/models/hero_model.dart';
+import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/widgets/heroes_list_search_bar.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/widgets/selectable_heroes_list.dart';

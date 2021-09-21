@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:rick_morty_01/data/network/models/hero_model.dart';
+import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/screens/location_profile_screen/widgets/location_hero_card.dart';
 
 class LocationHerosList extends StatelessWidget {

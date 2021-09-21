@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rick_morty_01/data/network/models/episode_model.dart';
+import 'package:rick_morty_01/data/view/episode_model.dart';
 
 import 'package:rick_morty_01/resources/variables/episodes_list.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/episode_card.dart';

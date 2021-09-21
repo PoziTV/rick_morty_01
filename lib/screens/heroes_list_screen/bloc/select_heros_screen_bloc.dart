@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:rick_morty_01/data/network/models/hero_model.dart';
+import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
 part "select_heros_screen_event.dart";
