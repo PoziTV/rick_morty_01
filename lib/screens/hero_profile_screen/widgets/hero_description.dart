@@ -10,7 +10,7 @@ class HeroDescription extends StatelessWidget {
     return Container(
       margin: EdgeInsets.only(top: 36),
       child: Text(
-        currentHero!.description,
+        currentHero!.about ?? '',
         style: themeTextStyles.textDescription,
       ),
     );

@@ -18,7 +18,7 @@ class HeroCard extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 37,
-            backgroundImage: Image.asset(currentHero.ava).image,
+            backgroundImage: Image.network(currentHero.imageName).image,
           ),
           Container(
             width: 18,
@@ -28,19 +28,19 @@ class HeroCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  currentHero.aliveStatus,
+                  currentHero.status.toString(),
                   style: themeTextStyles.textAppearanceOverline.copyWith(
-                    color: currentHero.aliveStatus == "ЖИВОЙ"
+                    color: currentHero.status == 1
                         ? themeColorPalette.AliveGreen
                         : themeColorPalette.AliveREd,
                   ),
                 ),
                 Text(
-                  currentHero.name,
+                  currentHero.fullName ?? '',
                   style: themeTextStyles.textAppearanceSubtitle2,
                 ),
                 Text(
-                  "${currentHero.bio}, ${currentHero.sex}",
+                  "${currentHero.race}, ${currentHero.gender}",
                   style: themeTextStyles.textAppearanceCaption,
                 ),
               ],

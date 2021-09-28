@@ -1,9 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:rick_morty_01/data/alive_color_decoder.dart';
+
+import 'package:rick_morty_01/data/alive_status_decoder.dart';
+import 'package:rick_morty_01/data/gender_decoder.dart';
 import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/bloc/select_heros_screen_bloc.dart';
-import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/screen.dart';
 
@@ -22,12 +25,12 @@ class HeroesGridView extends StatelessWidget {
     return GridView.builder(
       itemCount: heroesList.length,
       itemBuilder: (BuildContext context, int index) => InkWell(
-        child: _HeroGridViewItem(heroesList[index]),
+        child: _HeroGridViewCard(heroesList[index]),
         onTap: () {
           // var bloc_1 = HeroProfileBloc();
           heroProfileBloc.add(
-          // bloc_1.add(
-            HeroProfileEvent.initial(currentHero: heroesList[index]),
+            // bloc_1.add(
+            HeroProfileEvent.initial(currentHeroId: heroesList[index].id),
           );
           Navigator.push(
               context,
@@ -47,28 +50,32 @@ class HeroesGridView extends StatelessWidget {
   }
 }
 
-_HeroGridViewItem(HeroModel heroListItem) {
+_HeroGridViewCard(HeroModel currentHero) {
   return Column(
     children: [
       CircleAvatar(
         radius: 60,
-        backgroundImage: Image.asset(heroListItem.ava).image,
+        backgroundImage: Image.network(currentHero.imageName).image,
       ),
       Padding(padding: EdgeInsets.only(top: 18)),
       Text(
-        heroListItem.aliveStatus,
+        AliveStatusDecoder(currentHero.status),
+        // heroListItem.status
+
         style: themeTextStyles.textAppearanceOverline.copyWith(
-          color: heroListItem.aliveStatus == "ЖИВОЙ"
-              ? themeColorPalette.AliveGreen
-              : themeColorPalette.AliveREd,
+          color: AliveStatustoColorDecoder(currentHero.status),
+          // == 0
+          // ? themeColorPalette.AliveGreen
+          // : ? heroListItem.status == 1 themeColorPalette.AliveREd,
         ),
       ),
       Text(
-        heroListItem.name,
+        currentHero.fullName ?? '',
         style: themeTextStyles.textAppearanceSubtitle2,
       ),
       Text(
-        "${heroListItem.bio}, ${heroListItem.sex}",
+        "${currentHero.race}, ${GenderDecoder(currentHero.gender)}",
+        // "${currentHero.race}, ${currentHero.gender}",
         style: themeTextStyles.textAppearanceCaption,
       ),
     ],

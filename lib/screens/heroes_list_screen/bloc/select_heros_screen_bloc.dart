@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:rick_morty_01/data/repository.dart';
 import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/resources/variables/heroes_list.dart';
 
@@ -15,6 +16,8 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
   }
 
   static final SelectHeroesBloc _singleton = SelectHeroesBloc._internal();
+
+  final _repository = Repository();
 
   bool isGrid = false;
   List<HeroModel> blocHeroesList = [];
@@ -33,21 +36,12 @@ class SelectHeroesBloc extends Bloc<SelectHeroesEvent, SelectHeroesState> {
     yield SelectHeroesState.loading();
 
     try {
-      blocHeroesList = heroesList;
+      // blocHeroesList = heroesList;
       /*загрузка данных из репо*/
+      blocHeroesList = await _repository.getAllHeroes();
     } catch (ex) {
       yield SelectHeroesState.error();
     }
-
-    await Future.delayed(const Duration(seconds: 1), () {});
-
-    yield SelectHeroesState.error();
-
-    await Future.delayed(const Duration(seconds: 1), () {});
-
-    yield SelectHeroesState.loading();
-
-    await Future.delayed(const Duration(seconds: 1), () {});
 
     //где то здесь должно выдаться состояние success
 

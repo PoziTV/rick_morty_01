@@ -53,7 +53,7 @@ class LocationProfileStateDataToWidget extends StatelessWidget {
                       image: DecorationImage(
                         fit: BoxFit.fitHeight,
                         image:
-                            AssetImage(state.currentLocation.locationAvaPath),
+                            AssetImage(state.currentLocation.imageName),
                       ),
                     ),
                   ),

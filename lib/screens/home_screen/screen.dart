@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:rick_morty_01/data/service_api.dart';
+// import 'package:rick_morty_01/data/service_api.dart';
 import 'package:rick_morty_01/resources/images.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/screen.dart';
@@ -81,12 +81,12 @@ class HomeScreen extends StatelessWidget {
         Container(
           child: GestureDetector(
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => SelectHerosScreen(),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SelectHerosScreen(),
+                ),
+              );
             },
           ),
         ),

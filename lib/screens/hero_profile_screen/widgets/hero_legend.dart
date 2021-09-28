@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rick_morty_01/data/gender_decoder.dart';
 import 'package:rick_morty_01/data/view/hero_model.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/legend_card.dart';
 
@@ -18,12 +19,12 @@ class HeroLegend extends StatelessWidget {
               Expanded(
                   child: LegendCard(
                 title: "Пол",
-                info: currentHero!.sex,
+                info: GenderDecoder(currentHero!.gender),
               )),
               Expanded(
                   child: LegendCard(
                 title: "Расса",
-                info: currentHero!.bio,
+                info: currentHero!.race ?? '',
               )),
             ],
           ),

@@ -13,11 +13,11 @@ class EpisodInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("СЕРИЯ ${currentEpisod!.episodeNum}",
+          Text("СЕРИЯ ${currentEpisod!.series}",
               style: themeTextStyles.textOverline),
-          Text(currentEpisod!.episodeName,
+          Text(currentEpisod!.name ?? "" ,
               style: themeTextStyles.textEpisodeName),
-          Text(currentEpisod!.episodePremierDate,
+          Text(currentEpisod!.premiere.toString(),
               style: themeTextStyles.textBody2),
         ],
       ),

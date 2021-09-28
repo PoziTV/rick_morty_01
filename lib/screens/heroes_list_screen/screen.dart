@@ -23,14 +23,14 @@ class SelectHerosScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SelectHeroesBloc selectHeroesbloc = SelectHeroesBloc();
+    SelectHeroesBloc selectHeroesBloc = SelectHeroesBloc();
     return Container(
       decoration: BoxDecoration(
         color: themeColorPalette.ScreenBackGround,
       ),
       child: SafeArea(
         child: BlocConsumer<SelectHeroesBloc, SelectHeroesState>(
-          bloc: selectHeroesbloc..add(SelectHeroesEventInitial()),
+          bloc: selectHeroesBloc..add(SelectHeroesEventInitial()),
           listener: (context, state) {
             // if (state is SelectHeroesStateData) {
             // isGrid = state.isGrid;
@@ -47,12 +47,12 @@ class SelectHerosScreen extends StatelessWidget {
                 backgroundColor: themeColorPalette.ScreenBackGround,
                 title: HeroesListSearchBar(title: 'Найти персонажа'),
                 bottom: ServiceBar(
-                  heroesTotal: selectHeroesbloc.blocHeroesList.length,
+                  heroesTotal: selectHeroesBloc.blocHeroesList.length,
                   changeViewCallBack: () {
-                    selectHeroesbloc
+                    selectHeroesBloc
                       ..add(
                         SelectHeroesEvent.changeView(
-                            isGrid: selectHeroesbloc.isGrid /*isGrid*/),
+                            isGrid: selectHeroesBloc.isGrid /*isGrid*/),
                       );
                   },
                 ),

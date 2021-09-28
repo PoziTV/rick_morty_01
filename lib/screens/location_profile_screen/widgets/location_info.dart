@@ -13,17 +13,17 @@ class LocationInfo extends StatelessWidget {
       children: [
         Padding(padding: EdgeInsets.only(top: 34)),
         Text(
-          currentLocation.locationName,
+          currentLocation.name,
           style: themeTextStyles.textAppearanceHeadline4,
         ),
         Padding(padding: EdgeInsets.only(top: 3)),
         Text(
-          currentLocation.locationWorld,
+          currentLocation.measurement,
           style: themeTextStyles.textAppearanceCaption,
         ),
         Padding(padding: EdgeInsets.only(top: 32)),
         Text(
-          currentLocation.locationDesc,
+          currentLocation.about,
           style: themeTextStyles.textDescription,
         ),
         Padding(padding: EdgeInsets.only(top: 36)),

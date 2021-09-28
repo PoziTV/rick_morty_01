@@ -4,10 +4,12 @@
 
 import 'dart:convert';
 
-import 'package:rick_morty_01/data/network/models/episode.dart';
-import 'package:rick_morty_01/data/network/models/location.dart';
+// import 'package:rick_morty_01/data/network/models/episode.dart';
+// import 'package:rick_morty_01/data/network/models/location.dart';
+import 'package:rick_morty_01/data/view/hero_model.dart';
 
-HeroesModel heroesModelFromJson(String str) => HeroesModel.fromJson(json.decode(str));
+HeroesModel heroesModelFromJson(String str) =>
+    HeroesModel.fromJson(json.decode(str));
 
 String heroesModelToJson(HeroesModel data) => json.encode(data.toJson());
 
@@ -28,96 +30,97 @@ class HeroesModel {
   final bool succeeded;
   final dynamic message;
   final dynamic error;
-  final List<Datum> data;
+  final List<HeroModel> data;
 
   factory HeroesModel.fromJson(Map<String, dynamic> json) => HeroesModel(
-    totalRecords: json["totalRecords"],
-    pages: json["pages"],
-    nextPage: json["nextPage"],
-    succeeded: json["succeeded"],
-    message: json["message"],
-    error: json["error"],
-    data: List<Datum>.from(json["data"].map((x) => Datum.fromJson(x))),
-  );
+        totalRecords: json["totalRecords"],
+        pages: json["pages"],
+        nextPage: json["nextPage"],
+        succeeded: json["succeeded"],
+        message: json["message"],
+        error: json["error"],
+        data: List<HeroModel>.from(
+            json["data"].map((x) => HeroModel.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "totalRecords": totalRecords,
-    "pages": pages,
-    "nextPage": nextPage,
-    "succeeded": succeeded,
-    "message": message,
-    "error": error,
-    "data": List<dynamic>.from(data.map((x) => x.toJson())),
-  };
+        "totalRecords": totalRecords,
+        "pages": pages,
+        "nextPage": nextPage,
+        "succeeded": succeeded,
+        "message": message,
+        "error": error,
+        "data": List<dynamic>.from(data.map((x) => x.toJson())),
+      };
 }
 
-class Datum {
-  Datum({
-    required this.id,
-    required this.firstName,
-    required this.lastName,
-    required this.fullName,
-    required this.status,
-    required this.about,
-    required this.gender,
-    required this.race,
-    required this.imageName,
-    required this.locationId,
-    required this.location,
-    required this.placeOfBirthId,
-    required this.placeOfBirth,
-    required this.episodes,
-  });
-
-  final String id;
-  final String firstName;
-  final String lastName;
-  final String fullName;
-  final int status;
-  final String about;
-  final int gender;
-  final String race;
-  final String imageName;
-  final String locationId;
-  final Location location;
-  final String? placeOfBirthId;
-  final Location? placeOfBirth;
-  final List<Episode> episodes;
-
-  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
-    id: json["id"],
-    firstName: json["firstName"],
-    lastName: json["lastName"] == null ? /*null*/ '' : json["lastName"],
-    fullName: json["fullName"],
-    status: json["status"],
-    about: json["about"],
-    gender: json["gender"],
-    race: json["race"],
-    imageName: json["imageName"],
-    locationId: json["locationId"],
-    location: Location.fromJson(json["location"]),
-    placeOfBirthId: json["placeOfBirthId"] == /*null*/ '' ? null : json["placeOfBirthId"],
-    placeOfBirth: json["placeOfBirth"] == /*null*/ '' ? null : Location.fromJson(json["placeOfBirth"]),
-    episodes: List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "firstName": firstName,
-    "lastName": lastName == null ? /*null*/ '' : lastName,
-    "fullName": fullName,
-    "status": status,
-    "about": about,
-    "gender": gender,
-    "race": race,
-    "imageName": imageName,
-    "locationId": locationId,
-    "location": location.toJson(),
-    "placeOfBirthId": placeOfBirthId == /*null*/ '' ? null : placeOfBirthId,
-    "placeOfBirth": placeOfBirth == /*null*/ '' ? null : placeOfBirth!.toJson(),
-    "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
-  };
-}
+// class Datum {
+//   Datum({
+//     required this.id,
+//     required this.firstName,
+//     required this.lastName,
+//     required this.fullName,
+//     required this.status,
+//     required this.about,
+//     required this.gender,
+//     required this.race,
+//     required this.imageName,
+//     required this.locationId,
+//     required this.location,
+//     required this.placeOfBirthId,
+//     required this.placeOfBirth,
+//     required this.episodes,
+//   });
+//
+//   final String id;
+//   final String firstName;
+//   final String lastName;
+//   final String fullName;
+//   final int status;
+//   final String about;
+//   final int gender;
+//   final String race;
+//   final String imageName;
+//   final String locationId;
+//   final Location location;
+//   final String? placeOfBirthId;
+//   final Location? placeOfBirth;
+//   final List<Episode> episodes;
+//
+//   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
+//     id: json["id"],
+//     firstName: json["firstName"],
+//     lastName: json["lastName"] == null ? /*null*/ '' : json["lastName"],
+//     fullName: json["fullName"],
+//     status: json["status"],
+//     about: json["about"],
+//     gender: json["gender"],
+//     race: json["race"],
+//     imageName: json["imageName"],
+//     locationId: json["locationId"],
+//     location: Location.fromJson(json["location"]),
+//     placeOfBirthId: json["placeOfBirthId"] == /*null*/ '' ? null : json["placeOfBirthId"],
+//     placeOfBirth: json["placeOfBirth"] == /*null*/ '' ? null : Location.fromJson(json["placeOfBirth"]),
+//     episodes: List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))),
+//   );
+//
+//   Map<String, dynamic> toJson() => {
+//     "id": id,
+//     "firstName": firstName,
+//     "lastName": lastName == null ? /*null*/ '' : lastName,
+//     "fullName": fullName,
+//     "status": status,
+//     "about": about,
+//     "gender": gender,
+//     "race": race,
+//     "imageName": imageName,
+//     "locationId": locationId,
+//     "location": location.toJson(),
+//     "placeOfBirthId": placeOfBirthId == /*null*/ '' ? null : placeOfBirthId,
+//     "placeOfBirth": placeOfBirth == /*null*/ '' ? null : placeOfBirth!.toJson(),
+//     "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
+//   };
+// }
 
 // class Episode {
 //   Episode({
@@ -244,4 +247,3 @@ class Datum {
 //     }
 //     return reverseMap;
 //   }
-

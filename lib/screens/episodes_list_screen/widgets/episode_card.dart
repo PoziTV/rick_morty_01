@@ -21,7 +21,7 @@ class EpisodCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
             image: DecorationImage(
                 fit: BoxFit.fitHeight,
-                image: Image.asset(currentEpisod.episodeScreen).image),
+                image: Image.asset(currentEpisod.imageName).image),
           ),
           margin: EdgeInsets.only(right: 16),
         ),

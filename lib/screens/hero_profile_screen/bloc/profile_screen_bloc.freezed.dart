@@ -16,9 +16,9 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$HeroProfileEventTearOff {
   const _$HeroProfileEventTearOff();
 
-  _HeroProfileEventInitial initial({required HeroModel currentHero}) {
+  _HeroProfileEventInitial initial({required String currentHeroId}) {
     return _HeroProfileEventInitial(
-      currentHero: currentHero,
+      currentHeroId: currentHeroId,
     );
   }
 }
@@ -28,16 +28,16 @@ const $HeroProfileEvent = _$HeroProfileEventTearOff();
 
 /// @nodoc
 mixin _$HeroProfileEvent {
-  HeroModel get currentHero => throw _privateConstructorUsedError;
+  String get currentHeroId => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HeroModel currentHero) initial,
+    required TResult Function(String currentHeroId) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HeroModel currentHero)? initial,
+    TResult Function(String currentHeroId)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,7 +63,7 @@ abstract class $HeroProfileEventCopyWith<$Res> {
   factory $HeroProfileEventCopyWith(
           HeroProfileEvent value, $Res Function(HeroProfileEvent) then) =
       _$HeroProfileEventCopyWithImpl<$Res>;
-  $Res call({HeroModel currentHero});
+  $Res call({String currentHeroId});
 }
 
 /// @nodoc
@@ -77,13 +77,13 @@ class _$HeroProfileEventCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? currentHero = freezed,
+    Object? currentHeroId = freezed,
   }) {
     return _then(_value.copyWith(
-      currentHero: currentHero == freezed
-          ? _value.currentHero
-          : currentHero // ignore: cast_nullable_to_non_nullable
-              as HeroModel,
+      currentHeroId: currentHeroId == freezed
+          ? _value.currentHeroId
+          : currentHeroId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -95,7 +95,7 @@ abstract class _$HeroProfileEventInitialCopyWith<$Res>
           $Res Function(_HeroProfileEventInitial) then) =
       __$HeroProfileEventInitialCopyWithImpl<$Res>;
   @override
-  $Res call({HeroModel currentHero});
+  $Res call({String currentHeroId});
 }
 
 /// @nodoc
@@ -112,13 +112,13 @@ class __$HeroProfileEventInitialCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? currentHero = freezed,
+    Object? currentHeroId = freezed,
   }) {
     return _then(_HeroProfileEventInitial(
-      currentHero: currentHero == freezed
-          ? _value.currentHero
-          : currentHero // ignore: cast_nullable_to_non_nullable
-              as HeroModel,
+      currentHeroId: currentHeroId == freezed
+          ? _value.currentHeroId
+          : currentHeroId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -128,14 +128,14 @@ class __$HeroProfileEventInitialCopyWithImpl<$Res>
 class _$_HeroProfileEventInitial
     with DiagnosticableTreeMixin
     implements _HeroProfileEventInitial {
-  const _$_HeroProfileEventInitial({required this.currentHero});
+  const _$_HeroProfileEventInitial({required this.currentHeroId});
 
   @override
-  final HeroModel currentHero;
+  final String currentHeroId;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HeroProfileEvent.initial(currentHero: $currentHero)';
+    return 'HeroProfileEvent.initial(currentHeroId: $currentHeroId)';
   }
 
   @override
@@ -143,21 +143,21 @@ class _$_HeroProfileEventInitial
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HeroProfileEvent.initial'))
-      ..add(DiagnosticsProperty('currentHero', currentHero));
+      ..add(DiagnosticsProperty('currentHeroId', currentHeroId));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HeroProfileEventInitial &&
-            (identical(other.currentHero, currentHero) ||
+            (identical(other.currentHeroId, currentHeroId) ||
                 const DeepCollectionEquality()
-                    .equals(other.currentHero, currentHero)));
+                    .equals(other.currentHeroId, currentHeroId)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentHero);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(currentHeroId);
 
   @JsonKey(ignore: true)
   @override
@@ -168,19 +168,19 @@ class _$_HeroProfileEventInitial
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(HeroModel currentHero) initial,
+    required TResult Function(String currentHeroId) initial,
   }) {
-    return initial(currentHero);
+    return initial(currentHeroId);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(HeroModel currentHero)? initial,
+    TResult Function(String currentHeroId)? initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(currentHero);
+      return initial(currentHeroId);
     }
     return orElse();
   }
@@ -207,11 +207,11 @@ class _$_HeroProfileEventInitial
 }
 
 abstract class _HeroProfileEventInitial implements HeroProfileEvent {
-  const factory _HeroProfileEventInitial({required HeroModel currentHero}) =
+  const factory _HeroProfileEventInitial({required String currentHeroId}) =
       _$_HeroProfileEventInitial;
 
   @override
-  HeroModel get currentHero => throw _privateConstructorUsedError;
+  String get currentHeroId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$HeroProfileEventInitialCopyWith<_HeroProfileEventInitial> get copyWith =>

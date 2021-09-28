@@ -200,6 +200,7 @@ class SettingsDialogState extends State<SettingsDialog> {
                 setState(
                   () {
                     groupValue = 0;
+                    // widget. ;
                   },
                 );
               },
@@ -256,7 +257,7 @@ class SettingsDialogState extends State<SettingsDialog> {
                   ),
                   Expanded(
                     child: Text(
-                      'Включенна',
+                      'Включена',
                       style: themeTextStyles.textAppearanceSubtitle1,
                     ),
                   ),

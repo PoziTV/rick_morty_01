@@ -1,5 +1,6 @@
-import 'package:rick_morty_01/data/network/models/enum_values.dart';
-import 'package:rick_morty_01/data/network/models/measurements.dart';
+// import 'package:rick_morty_01/data/network/models/enum_values.dart';
+import 'package:rick_morty_01/data/view/measurements_model.dart';
+import 'package:rick_morty_01/data/view/micro_universum_model.dart';
 
 class Location {
   Location({

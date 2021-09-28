@@ -4,15 +4,16 @@
 
 import 'dart:convert';
 
-import 'package:rick_morty_01/data/network/models/episode.dart';
-import 'package:rick_morty_01/data/network/models/location.dart';
+// import 'package:rick_morty_01/data/network/models/episode.dart';
+// import 'package:rick_morty_01/data/network/models/location.dart';
+import 'package:rick_morty_01/data/view/hero_model.dart';
 
-HeroModel heroModelFromJson(String str) => HeroModel.fromJson(json.decode(str));
+HeroNetworkModel heroNetworkModelFromJson(String str) => HeroNetworkModel.fromJson(json.decode(str));
 
-String heroModelToJson(HeroModel data) => json.encode(data.toJson());
+String heroNetworkModelToJson(HeroNetworkModel data) => json.encode(data.toJson());
 
-class HeroModel {
-  HeroModel({
+class HeroNetworkModel {
+  HeroNetworkModel({
     required this.succeeded,
     this.message,
     this.error,
@@ -22,13 +23,13 @@ class HeroModel {
   final bool succeeded;
   final dynamic message;
   final dynamic error;
-  final Data data;
+  final HeroModel data;
 
-  factory HeroModel.fromJson(Map<String, dynamic> json) => HeroModel(
+  factory HeroNetworkModel.fromJson(Map<String, dynamic> json) => HeroNetworkModel(
     succeeded: json["succeeded"],
     message: json["message"],
     error: json["error"],
-    data: Data.fromJson(json["data"]),
+    data: HeroModel.fromJson(json["data"]),
   );
 
   Map<String, dynamic> toJson() => {
@@ -39,73 +40,73 @@ class HeroModel {
   };
 }
 
-class Data {
-  Data({
-    required this.id,
-    required this.firstName,
-    required this.lastName,
-    required this.fullName,
-    required this.status,
-    required this.about,
-    required this.gender,
-    required this.race,
-    required this.imageName,
-    required this.locationId,
-    required this.location,
-    required this.placeOfBirthId,
-    required this.placeOfBirth,
-    required this.episodes,
-  });
-
-  final String id;
-  final String firstName;
-  final String lastName;
-  final String fullName;
-  final int status;
-  final String about;
-  final int gender;
-  final String race;
-  final String imageName;
-  final String locationId;
-  final Location location;
-  final String placeOfBirthId;
-  final Location placeOfBirth;
-  final List<Episode> episodes;
-
-  factory Data.fromJson(Map<String, dynamic> json) => Data(
-    id: json["id"],
-    firstName: json["firstName"],
-    lastName: json["lastName"],
-    fullName: json["fullName"],
-    status: json["status"],
-    about: json["about"],
-    gender: json["gender"],
-    race: json["race"],
-    imageName: json["imageName"],
-    locationId: json["locationId"],
-    location: Location.fromJson(json["location"]),
-    placeOfBirthId: json["placeOfBirthId"],
-    placeOfBirth: Location.fromJson(json["placeOfBirth"]),
-    episodes: List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))),
-  );
-
-  Map<String, dynamic> toJson() => {
-    "id": id,
-    "firstName": firstName,
-    "lastName": lastName,
-    "fullName": fullName,
-    "status": status,
-    "about": about,
-    "gender": gender,
-    "race": race,
-    "imageName": imageName,
-    "locationId": locationId,
-    "location": location.toJson(),
-    "placeOfBirthId": placeOfBirthId,
-    "placeOfBirth": placeOfBirth.toJson(),
-    "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
-  };
-}
+// class Data {
+//   Data({
+//     required this.id,
+//     required this.firstName,
+//     required this.lastName,
+//     required this.fullName,
+//     required this.status,
+//     required this.about,
+//     required this.gender,
+//     required this.race,
+//     required this.imageName,
+//     required this.locationId,
+//     required this.location,
+//     required this.placeOfBirthId,
+//     required this.placeOfBirth,
+//     required this.episodes,
+//   });
+//
+//   final String id;
+//   final String firstName;
+//   final String lastName;
+//   final String fullName;
+//   final int status;
+//   final String about;
+//   final int gender;
+//   final String race;
+//   final String imageName;
+//   final String locationId;
+//   final Location location;
+//   final String placeOfBirthId;
+//   final Location placeOfBirth;
+//   final List<Episode> episodes;
+//
+//   // factory Data.fromJson(Map<String, dynamic> json) => Data(
+//   //   id: json["id"],
+//   //   firstName: json["firstName"],
+//   //   lastName: json["lastName"],
+//   //   fullName: json["fullName"],
+//   //   status: json["status"],
+//   //   about: json["about"],
+//   //   gender: json["gender"],
+//   //   race: json["race"],
+//   //   imageName: json["imageName"],
+//   //   locationId: json["locationId"],
+//   //   location: Location.fromJson(json["location"]),
+//   //   placeOfBirthId: json["placeOfBirthId"],
+//   //   placeOfBirth: Location.fromJson(json["placeOfBirth"]),
+//   //   episodes: List<Episode>.from(json["episodes"].map((x) => Episode.fromJson(x))),
+//   // );
+//   //
+//   // Map<String, dynamic> toJson() => {
+//   //   "id": id,
+//   //   "firstName": firstName,
+//   //   "lastName": lastName,
+//   //   "fullName": fullName,
+//   //   "status": status,
+//   //   "about": about,
+//   //   "gender": gender,
+//   //   "race": race,
+//   //   "imageName": imageName,
+//   //   "locationId": locationId,
+//   //   "location": location.toJson(),
+//   //   "placeOfBirthId": placeOfBirthId,
+//   //   "placeOfBirth": placeOfBirth.toJson(),
+//   //   "episodes": List<dynamic>.from(episodes.map((x) => x.toJson())),
+//   // };
+// }
 
 // class Episode {
 //   Episode({

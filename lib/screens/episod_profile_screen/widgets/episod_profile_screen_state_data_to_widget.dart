@@ -66,7 +66,7 @@ class EpisodProfileStateDataToWidget extends StatelessWidget {
                     ),
                     image: DecorationImage(
                       fit: BoxFit.fitHeight,
-                      image: AssetImage(state.currentEpisod.episodeScreen),
+                      image: AssetImage(state.currentEpisod.imageName),
                     ),
                   ),
                 ),
@@ -132,7 +132,7 @@ class EpisodProfileStateDataToWidget extends StatelessWidget {
                     iconSize: 152,
                     icon: SvgPicture.asset(SvgIcons.Play,),
                     onPressed: () {
-                      print('смотрим ${state.currentEpisod.episodeName}');
+                      print('смотрим ${state.currentEpisod.name}');
                     },
                   ),
                 )

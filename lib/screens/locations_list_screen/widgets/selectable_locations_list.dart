@@ -65,20 +65,20 @@ class _LocationCard extends StatelessWidget {
             decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.fitWidth,
-                  image: AssetImage(location.locationAvaPath)),
+                  image: AssetImage(location.imageName)),
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 16, top: 12),
             child: Text(
-              location.locationName,
+              location.name,
               style: themeTextStyles.textAppearanceHeadline6,
             ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 16),
             child: Text(
-              "Мир - ${location.locationWorld}",
+              "Мир - ${location.measurement}",
               style: themeTextStyles.textAppearanceCaption.copyWith(
                 fontWeight: FontWeight.w400,
               ),

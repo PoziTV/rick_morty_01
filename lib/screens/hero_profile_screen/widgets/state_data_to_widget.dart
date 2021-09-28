@@ -51,7 +51,8 @@ class StateDataToWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                         fit: BoxFit.fitWidth,
-                        image: AssetImage(state.currentHero.ava),
+                        image: Image.network(state.currentHero.imageName).image,
+                            // AssetImage(state.currentHero.imageName),
                       ),
                     ),
                     child: ClipRect(
@@ -69,7 +70,8 @@ class StateDataToWidget extends StatelessWidget {
                         radius: 83,
                         backgroundColor: themeColorPalette.ScreenBackGround,
                         child: CircleAvatar(
-                          backgroundImage: AssetImage(state.currentHero.ava),
+                          backgroundImage: Image.network(state.currentHero.imageName).image,
+                          // AssetImage(state.currentHero.imageName),
                           radius: 73,
                         ),
                       ))

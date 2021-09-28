@@ -11,8 +11,8 @@ class DioSettings {
   Dio dio = Dio(
     BaseOptions(
       baseUrl: mainServer,
-      connectTimeout: 10000,
-      receiveTimeout: 10000,
+      connectTimeout: 50000,
+      receiveTimeout: 50000,
     ),
   );
 
