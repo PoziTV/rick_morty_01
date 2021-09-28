@@ -15,6 +15,7 @@ import 'package:rick_morty_01/screens/locations_list_screen/bloc/locations_list_
 import 'package:rick_morty_01/screens/locations_list_screen/screen.dart';
 
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 
 class SelectHerosScreen extends StatelessWidget {
   // bool isGrid = false;
@@ -26,7 +27,8 @@ class SelectHerosScreen extends StatelessWidget {
     SelectHeroesBloc selectHeroesBloc = SelectHeroesBloc();
     return Container(
       decoration: BoxDecoration(
-        color: themeColorPalette.ScreenBackGround,
+        // color: themeColorPalette.ScreenBackGround,
+        color: context.read<CurrentThemeMode>().screenBackGround,
       ),
       child: SafeArea(
         child: BlocConsumer<SelectHeroesBloc, SelectHeroesState>(
@@ -44,7 +46,8 @@ class SelectHerosScreen extends StatelessWidget {
               appBar: AppBar(
                 automaticallyImplyLeading: false,
                 elevation: 0,
-                backgroundColor: themeColorPalette.ScreenBackGround,
+                // backgroundColor: themeColorPalette.ScreenBackGround,
+                backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
                 title: HeroesListSearchBar(title: 'Найти персонажа'),
                 bottom: ServiceBar(
                   heroesTotal: selectHeroesBloc.blocHeroesList.length,

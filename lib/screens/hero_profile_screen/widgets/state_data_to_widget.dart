@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/src/provider.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_description.dart';
@@ -9,6 +10,7 @@ import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_episodes_
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_info.dart';
 import 'package:rick_morty_01/screens/hero_profile_screen/widgets/hero_legend.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 
 class StateDataToWidget extends StatelessWidget {
@@ -32,13 +34,15 @@ class StateDataToWidget extends StatelessWidget {
             onPressed: () {
               Navigator.pop(initialContext);
             },
-            backgroundColor: themeColorPalette.ScreenBackGround,
+            // backgroundColor: themeColorPalette.ScreenBackGround,
+            backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
           ),
         ),
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
-      backgroundColor: themeColorPalette.ScreenBackGround,
+      // backgroundColor: themeColorPalette.ScreenBackGround,
+      backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -68,7 +72,8 @@ class StateDataToWidget extends StatelessWidget {
                       top: 138,
                       child: CircleAvatar(
                         radius: 83,
-                        backgroundColor: themeColorPalette.ScreenBackGround,
+                        // ackgroundColor: themeColorPalette.ScreenBackGround,
+                        backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
                         child: CircleAvatar(
                           backgroundImage: Image.network(state.currentHero.imageName).image,
                           // AssetImage(state.currentHero.imageName),

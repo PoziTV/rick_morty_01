@@ -2,9 +2,11 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/src/provider.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/screens/location_profile_screen/bloc/profile_screen_bloc.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 
 import 'location_heros_list.dart';
@@ -40,7 +42,8 @@ class LocationProfileStateDataToWidget extends StatelessWidget {
         elevation: 0,
       ),
       extendBodyBehindAppBar: true,
-      backgroundColor: themeColorPalette.ScreenBackGround,
+      // backgroundColor: themeColorPalette.ScreenBackGround,
+      backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
       body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(vertical: 0),
         child: Column(
@@ -59,7 +62,8 @@ class LocationProfileStateDataToWidget extends StatelessWidget {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      color: themeColorPalette.ScreenBackGround,
+                      // color: themeColorPalette.ScreenBackGround,
+                      color: context.read<CurrentThemeMode>().screenBackGround,
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(26),
                         topRight: Radius.circular(26),

@@ -9,6 +9,7 @@ import 'package:rick_morty_01/screens/locations_list_screen/widgets/locations_li
 import 'package:rick_morty_01/screens/locations_list_screen/bloc/locations_list_screen_bloc.dart';
 
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 
 class LocationsListScreen extends StatelessWidget {
   @override
@@ -19,7 +20,8 @@ class LocationsListScreen extends StatelessWidget {
       ..add(LocationsListEventInitial()); // ini странцу списком локаций
     return Container(
       decoration: BoxDecoration(
-        color: themeColorPalette.ScreenBackGround,
+        // color: themeColorPalette.ScreenBackGround,
+        color: context.read<CurrentThemeMode>().screenBackGround,
       ),
       child: SafeArea(
         child: BlocConsumer<LocationsListBloc, LocationsListState>(
@@ -31,7 +33,8 @@ class LocationsListScreen extends StatelessWidget {
                 appBar: AppBar(
                   automaticallyImplyLeading: false,
                   elevation: 0,
-                  backgroundColor: themeColorPalette.ScreenBackGround,
+                  // backgroundColor: themeColorPalette.ScreenBackGround,
+                    backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
                   title: LocationsListSearchBar(title: 'Найти локацию'),
                   bottom: LocationListServiceBar(
                     locationsTotal: locationsListbloc.blocLocationsList

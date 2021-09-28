@@ -8,6 +8,7 @@ import 'package:rick_morty_01/screens/episodes_list_screen/widgets/episodes_list
 import 'package:rick_morty_01/screens/episodes_list_screen/widgets/selectable_episodes_list.dart';
 
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 
 import 'bloc/episodes_list_screen_bloc.dart';
 
@@ -23,7 +24,8 @@ class EpisodesListScreen extends StatelessWidget {
     print('dddd');
     return Container(
       decoration: BoxDecoration(
-        color: themeColorPalette.ScreenBackGround,
+        // color: themeColorPalette.ScreenBackGround,
+        color: context.read<CurrentThemeMode>().screenBackGround,
       ),
       child: SafeArea(
         child: BlocConsumer<EpisodesListBloc, EpisodesListState>(
@@ -35,7 +37,8 @@ class EpisodesListScreen extends StatelessWidget {
                 appBar: AppBar(
                   automaticallyImplyLeading: false,
                   elevation: 0,
-                  backgroundColor: themeColorPalette.ScreenBackGround,
+                  // backgroundColor: themeColorPalette.ScreenBackGround,
+                  backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
                   title: EpisodesListSearchBar(title: 'Найти эпизод'),
                   bottom: EpisodesListServiceBar(
 

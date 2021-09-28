@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:provider/src/provider.dart';
 // import 'package:rick_morty_01/data/service_api.dart';
 import 'package:rick_morty_01/resources/images.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
 import 'package:rick_morty_01/screens/heroes_list_screen/screen.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -25,7 +27,9 @@ class HomeScreen extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               colorFilter: ColorFilter.mode(
-                  themeColorPalette.ScreenBackGround, BlendMode.lighten),
+                  // themeColorPalette.ScreenBackGround, BlendMode.lighten),
+                  context.read<CurrentThemeMode>().screenBackGround,
+                  BlendMode.lighten),
               fit: BoxFit.cover,
               image: Image.asset(
                 Images.backGroundPictureStarSky,

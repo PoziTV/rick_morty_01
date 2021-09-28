@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_morty_01/screens/home_screen/screen.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
-import 'package:rick_morty_01/theme/dark_theme_mode.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (BuildContext context) => DarkThemeMode(),
+    ChangeNotifierProvider<CurrentThemeMode>(
+      create: (BuildContext context) => CurrentThemeMode(themeMode:  ThemeModes.DarkMode),
       child: MyApp(),
     ),
   );
@@ -33,7 +33,11 @@ class MyApp extends StatelessWidget {
         ),
         home: DefaultTextStyle(
           style: TextStyle(decoration: TextDecoration.none),
-          child: HomeScreen(),
+          child: Consumer<CurrentThemeMode>(
+            builder: (context, theme, _) =>
+                // child:
+                HomeScreen(),
+          ),
         ),
       ),
 

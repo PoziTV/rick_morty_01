@@ -1,180 +1,201 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 import 'package:rick_morty_01/components/common_bottom_app_bar.dart';
 import 'package:rick_morty_01/resources/svg_icons.dart';
 import 'package:rick_morty_01/theme/color_theme.dart';
+import 'package:rick_morty_01/theme/theme_mode.dart';
 import 'package:rick_morty_01/theme/text_theme.dart';
 
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: themeColorPalette.ScreenBackGround,
-      // appBar: PreferredSize(
+    return Consumer<CurrentThemeMode>(
+      builder: (context, theme, _) =>
+          // child:
+          Scaffold(
+        backgroundColor: context.read<CurrentThemeMode>().screenBackGround,
+        // themeColorPalette.ScreenBackGround,
+        // appBar: PreferredSize(
 
-      // preferredSize: Size.fromHeight(120.0),
-      // child: AppBar(
-      //   elevation: 0,
-      //   backgroundColor: themeColorPalette.AliveGreen/*.ScreenBackGround*/,
-      //   leading:Column(
-      //     children: [
-      //       Padding(padding: EdgeInsets.only(top: 50),),
-      //       Expanded(
-      //         child: IconButton(
-      //                         iconSize: 24,
-      //                         icon: SvgPicture.asset(SvgIcons.ArrowBack),
-      //                         onPressed: () {},
-      //                       ),
-      //       ),
-      //     ],
-      //   ),
-      //   // title:
-      // ),
-      // ),
-      body: Container(
-        margin: EdgeInsets.only(
-          left: 16,
-          right: 16,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: EdgeInsets.only(top: 55),
-            ),
-            Row(
-              children: [
-                SizedBox(
-                  height: 24,
-                  width: 24,
-                  child: IconButton(
-                    padding: EdgeInsets.all(0),
-                    icon: SvgPicture.asset(SvgIcons.ArrowBack),
-                    onPressed: () {},
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 20), /*53*/
-                ),
-                Text(
-                  'Настройки',
-                  style: themeTextStyles.textAppearanceHeadline6,
-                ),
-              ],
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 45), /*53*/
-            ),
-            Text(
-              'Внешний вид',
-              style: themeTextStyles.textAppearanceOverline.copyWith(
-                color: themeColorPalette.ServiceBarText,
+        // preferredSize: Size.fromHeight(120.0),
+        // child: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: themeColorPalette.AliveGreen/*.ScreenBackGround*/,
+        //   leading:Column(
+        //     children: [
+        //       Padding(padding: EdgeInsets.only(top: 50),),
+        //       Expanded(
+        //         child: IconButton(
+        //                         iconSize: 24,
+        //                         icon: SvgPicture.asset(SvgIcons.ArrowBack),
+        //                         onPressed: () {},
+        //                       ),
+        //       ),
+        //     ],
+        //   ),
+        //   // title:
+        // ),
+        // ),
+        body: Container(
+          margin: EdgeInsets.only(
+            left: 16,
+            right: 16,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 55),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 24),
-            ),
-            InkWell(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+              Row(
                 children: [
-                  Container(
-                    width: 36,
-                    child: SvgPicture.asset(
-                      SvgIcons.PaletteSvg,
-                      color: themeColorPalette.NameWhite,
+                  SizedBox(
+                    height: 24,
+                    width: 24,
+                    child: IconButton(
+                      padding: EdgeInsets.all(0),
+                      icon: SvgPicture.asset(SvgIcons.ArrowBack),
+                      onPressed: () {},
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 16),
+                    padding: EdgeInsets.only(left: 20), /*53*/
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Темная тема',
-                          style: themeTextStyles.textAppearanceSubtitle1,
-                        ),
-                        Text(
-                          'Включена',
-                          style: themeTextStyles.textBody2,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    width: 24,
-                    child: SvgPicture.asset(
-                      SvgIcons.AngleRightIcon,
-                    ),
+                  Text(
+                    'Настройки',
+                    style: themeTextStyles.textAppearanceHeadline6,
                   ),
                 ],
               ),
-              onTap: () {
-                showDialog(
-                  barrierColor: Colors.black.withOpacity(0.47),
-                  // barrierDismissible: true,
-                  context: context,
-                  builder: (BuildContext context) {
-                    return SettingsDialog();
-                  },
-                );
-              },
-            ),
-            Divider(
-              height: 72,
-              thickness: 1,
-              color: themeColorPalette.SearchBarBackGround,
-            ),
-            Text(
-              'О приложении',
-              style: themeTextStyles.textAppearanceOverline
-                  .copyWith(color: themeColorPalette.ServiceBarText),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 24),
-            ),
-            Text(
-              'Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концентрированной темной материи.',
-              style: themeTextStyles.textSettingsDescription,
-            ),
-            Divider(
-              height: 72,
-              thickness: 1,
-              color: themeColorPalette.SearchBarBackGround,
-            ),
-            Text(
-              'Версия приложения',
-              style: themeTextStyles.textAppearanceOverline
-                  .copyWith(color: themeColorPalette.ServiceBarText),
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 24),
-            ),
-            Text(
-              'Rick & Morty  v1.0.0',
-              style: themeTextStyles.textSettingsDescription,
-            ),
-          ],
+              Padding(
+                padding: EdgeInsets.only(top: 45), /*53*/
+              ),
+              Text(
+                'Внешний вид',
+                style: themeTextStyles.textAppearanceOverline.copyWith(
+                  color: themeColorPalette.ServiceBarText,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 24),
+              ),
+              InkWell(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Container(
+                      width: 36,
+                      child: SvgPicture.asset(
+                        SvgIcons.PaletteSvg,
+                        color: themeColorPalette.NameWhite,
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(left: 16),
+                    ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Темная тема',
+                            style: themeTextStyles.textAppearanceSubtitle1,
+                          ),
+                          Text(
+                            'Включена',
+                            style: themeTextStyles.textBody2,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 24,
+                      child: SvgPicture.asset(
+                        SvgIcons.AngleRightIcon,
+                      ),
+                    ),
+                  ],
+                ),
+                onTap: () {
+                  showDialog(
+                    barrierColor: Colors.black.withOpacity(0.47),
+                    // barrierDismissible: true,
+                    context: context,
+                    builder: (BuildContext context) {
+                      ThemeModes darkThemeMode =
+                          context.read<CurrentThemeMode>().themeMode;
+                      return SettingsDialog(
+                        initThemeMode: darkThemeMode,
+                      );
+                    },
+                  );
+                },
+              ),
+              Divider(
+                height: 72,
+                thickness: 1,
+                color: themeColorPalette.SearchBarBackGround,
+              ),
+              Text(
+                'О приложении',
+                style: themeTextStyles.textAppearanceOverline
+                    .copyWith(color: themeColorPalette.ServiceBarText),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 24),
+              ),
+              Text(
+                'Зигерионцы помещают Джерри и Рика в симуляцию, чтобы узнать секрет изготовления концентрированной темной материи.',
+                style: themeTextStyles.textSettingsDescription,
+              ),
+              Divider(
+                height: 72,
+                thickness: 1,
+                color: themeColorPalette.SearchBarBackGround,
+              ),
+              Text(
+                'Версия приложения',
+                style: themeTextStyles.textAppearanceOverline
+                    .copyWith(color: themeColorPalette.ServiceBarText),
+              ),
+              Padding(
+                padding: EdgeInsets.only(top: 24),
+              ),
+              Text(
+                'Rick & Morty  v1.0.0',
+                style: themeTextStyles.textSettingsDescription,
+              ),
+            ],
+          ),
         ),
+        bottomNavigationBar: CommonBottomAppBar.Settings(),
       ),
-      bottomNavigationBar: CommonBottomAppBar.Settings(),
     );
   }
 }
 
 class SettingsDialog extends StatefulWidget {
+  SettingsDialog({required this.initThemeMode});
+
+  ThemeModes initThemeMode;
+
+  ThemeModes initThemeMode2 = CurrentThemeMode.themeMode;
+  // DarkThemeModes darkThemeMode = DarkThemeModes.;
+
   @override
-  SettingsDialogState createState() => SettingsDialogState();
+   SettingsDialogState createState() => SettingsDialogState();
 }
 
 class SettingsDialogState extends State<SettingsDialog> {
-  int? groupValue = 0;
+  int groupValue = 0;
 
   @override
   Widget build(BuildContext context) {
+    ThemeModes darkThemeMode = context.read<CurrentThemeMode>().themeMode;
+    groupValue = darkThemeMode.index;
+
     return Dialog(
       elevation: 0,
       shape: RoundedRectangleBorder(
@@ -199,7 +220,9 @@ class SettingsDialogState extends State<SettingsDialog> {
               onTap: () {
                 setState(
                   () {
-                    groupValue = 0;
+                    // groupValue = 0;
+                    context.read<CurrentThemeMode>().themeMode =
+                        ThemeModes.LigthMode;
                     // widget. ;
                   },
                 );
@@ -235,7 +258,9 @@ class SettingsDialogState extends State<SettingsDialog> {
               onTap: () {
                 setState(
                   () {
-                    groupValue = 1;
+                    //   groupValue = 1;
+                    context.read<CurrentThemeMode>().themeMode =
+                        ThemeModes.DarkMode;
                   },
                 );
               },
@@ -271,7 +296,9 @@ class SettingsDialogState extends State<SettingsDialog> {
               onTap: () {
                 setState(
                   () {
-                    groupValue = 2;
+                    // groupValue = 2;
+                    context.read<CurrentThemeMode>().themeMode =
+                        ThemeModes.BySystemMode;
                   },
                 );
               },
@@ -308,7 +335,9 @@ class SettingsDialogState extends State<SettingsDialog> {
               onTap: () {
                 setState(
                   () {
-                    groupValue = 3;
+                    // groupValue = 3;
+                    context.read<CurrentThemeMode>().themeMode =
+                        ThemeModes.EnergySavingMode;
                   },
                 );
               },
@@ -343,6 +372,8 @@ class SettingsDialogState extends State<SettingsDialog> {
             ),
             GestureDetector(
               onTap: () {
+                context.read<CurrentThemeMode>().themeMode = widget.initThemeMode;
+
                 Navigator.of(context).pop();
               },
               child: Container(
