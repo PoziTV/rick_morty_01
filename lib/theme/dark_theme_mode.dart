@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 enum DarkThemeModes {
   DarkThemeOn,
   DarkThemeOff,
@@ -5,8 +7,16 @@ enum DarkThemeModes {
   DarkThemeEnergySavingMode
 }
 
-class DarkThemeMode {
-  DarkThemeMode({this.darkThemeMode = DarkThemeModes.DarkThemeOff});
+class DarkThemeMode extends ChangeNotifier {
+  DarkThemeMode({DarkThemeModes darkThemeMode = DarkThemeModes.DarkThemeOff})
+      : _darkThemeMode = darkThemeMode;
 
-  DarkThemeModes darkThemeMode;
+  DarkThemeModes _darkThemeMode;
+
+  DarkThemeModes get darkThemeMode => _darkThemeMode;
+
+  set darkThemeMode(DarkThemeModes val) {
+    _darkThemeMode = val;
+    notifyListeners();
+  }
 }

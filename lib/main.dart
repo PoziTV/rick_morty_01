@@ -9,7 +9,7 @@ import 'package:rick_morty_01/theme/dark_theme_mode.dart';
 
 void main() {
   runApp(
-    Provider(
+    ChangeNotifierProvider(
       create: (BuildContext context) => DarkThemeMode(),
       child: MyApp(),
     ),
